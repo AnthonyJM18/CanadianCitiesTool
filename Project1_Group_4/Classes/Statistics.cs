@@ -12,7 +12,7 @@ namespace Project1_Group_4.Classes
 {
     public class Statistics
     {
-        private Dictionary<int, CityInfo> CityCatalogue;
+        public Dictionary<int, CityInfo> CityCatalogue;
         private string FilePath {get; set;}
         private eFileType FileType { get; set; }
         public delegate void PopulationHandler(object sender, EventArgs e);

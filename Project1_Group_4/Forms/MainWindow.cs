@@ -41,7 +41,11 @@ namespace Project1_Group_4.Forms
 
         private void button_LoadCSV_Click(object sender, EventArgs e)
         {
-            stats = new Statistics("./Canadacities.csv");
+            stats = new Statistics("./Data/Canadacities.csv");
+            foreach (var city in stats.CityCatalogue.Values)
+            {
+                listBox_cities.Items.Add(city);
+            }
         }
 
         private void button_LoadJSON_Click(object sender, EventArgs e)
