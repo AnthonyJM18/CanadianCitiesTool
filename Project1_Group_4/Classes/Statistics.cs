@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project1_Group_4.Enums;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;

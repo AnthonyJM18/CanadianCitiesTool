@@ -13,10 +13,11 @@ namespace Project1_Group_4.Classes
         public string Province { get; private set; }
         public decimal Latitude { get; private set; }
         public decimal Longitude { get; private set; }
+        public bool IsCapital { get; private set; }
 
         public CityInfo() { }
 
-        public CityInfo(string id, string name, string ascii, int pop, string prov, decimal lat, decimal lng)
+        public CityInfo(string id, string name, string ascii, int pop, string prov, decimal lat, decimal lng, bool iscap)
         {
             CityID = id;
             CityName = name;
@@ -25,6 +26,7 @@ namespace Project1_Group_4.Classes
             Province = prov;
             Latitude = lat;
             Longitude = lng;
+            IsCapital = iscap;
         }
         public string GetProvince()
         {
