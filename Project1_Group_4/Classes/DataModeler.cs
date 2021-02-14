@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Xml;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace Project1_Group_4.Classes
 {
@@ -33,7 +35,16 @@ namespace Project1_Group_4.Classes
         }
         private void ParseJSON(string filename)
         {
+            string json = File.ReadAllText(filename);
+            List<CityHelper> cities = JsonConvert.DeserializeObject<List<CityHelper>>(json);
 
+            foreach (CityHelper city in cities)
+            {
+                bool capital = city.capital == "admin";
+                CityInfo cityInfo = new CityInfo(city.id,city.city, city.city_ascii, city.population, city.admin_name, city.lat, city.lng, capital);
+                FileData.Add(cityInfo.CityID, cityInfo);
+            }
+            Console.WriteLine(cities.Count);
         }
         private void ParseXML(string filename)
         {
