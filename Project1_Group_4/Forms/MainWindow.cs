@@ -72,6 +72,12 @@ namespace Project1_Group_4.Forms
         {
             selectedCity = (CityInfo)listBox_cities.SelectedItem;
             this.textBox_CityName.Text = selectedCity.CityName;
+            this.textBox_CityPopulation.Text = $"{selectedCity.GetPopulation()}";
+            this.textBox_Location.Text = selectedCity.GetLocation().ToString();
+            this.textBox_ProvinceName.Text = selectedCity.GetProvince();
+            this.textBox_ProvincePopulation.Text = $"{stats.DisplayProvincePopulation(selectedCity.GetProvince())}";
+            this.textBox_CapitalCity.Text = stats.GetCapital(selectedCity.GetProvince()).CityName;
+
         }
     }
 }

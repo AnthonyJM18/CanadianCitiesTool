@@ -14,5 +14,10 @@ namespace Project1_Group_4.Classes
             Latitude = lat;
             Longitude = lng;
         }
+
+        public override string ToString()
+        {
+            return $"{Latitude}, {Longitude}";
+        }
     }
 }
