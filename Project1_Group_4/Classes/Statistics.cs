@@ -2,13 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace Project1_Group_4.Classes
 {
     public class Statistics
     {
-        private Dictionary<string, CityInfo> CityCatalogue;
+        private Dictionary<int, CityInfo> CityCatalogue;
         private string FilePath {get; set;}
         private eFileType FileType { get; set; }
         public delegate void PopulationHandler(object sender, EventArgs e);
@@ -28,16 +29,26 @@ namespace Project1_Group_4.Classes
         }
 
         // City Methods
-        public CityInfo DisplayCityInformation(string city)
+        public List<CityInfo> DisplayCityInformation(string city)
         {
             // convert city name to lowercase
+            string cityLowerCase = city.ToLower();
 
+            // create list of cityinfo to add if it has the same city name in CityCatalogue
+            List<CityInfo> userCities = new List<CityInfo>();
             // Check if the dictionary has a record for the passed city name
-                
-                // if exists return the city
+            userCities = CityCatalogue.Values.Where(x => x.CityName == cityLowerCase).ToList();
 
-            // if it does not exist return null
-            return NotImplementedException;
+            // if exists return the city
+            if(userCities.Count > 0)
+            {
+                return userCities;
+            }
+            else
+            {
+                // if it does not exist return null
+                return null;
+            }
         }
 
         public CityInfo DisplayLargestPopulationCity()

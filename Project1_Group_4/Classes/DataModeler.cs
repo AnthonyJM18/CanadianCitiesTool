@@ -1,18 +1,34 @@
 ﻿using Project1_Group_4.Enums;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Project1_Group_4.Classes
 {
     public class DataModeler
     {
-        Dictionary<string, CityInfo> FileData;
+        Dictionary<int, CityInfo> FileData;
         private delegate void SetupDataFile(string filename);
 
         private void ParseCSV(string filename)
         {
+            using (var reader = new StreamReader(filename))
+            {
+                reader.ReadLine();
+                var file = reader.ReadToEnd();
+                var lines = file.Split('\n');
 
+                foreach (var line in lines)
+                {
+                    var cityInfo = line.Split(',');
+
+                    CityInfo city = new CityInfo(int.Parse(cityInfo[8]), cityInfo[1], cityInfo[2], int.Parse(cityInfo[7]), cityInfo[5],
+                        decimal.Parse(cityInfo[2]), decimal.Parse(cityInfo[3]), cityInfo[6] == "admin");
+
+                    FileData.Add(city.CityID, city);
+                }
+            }
         }
         private void ParseJSON(string filename)
         {
@@ -22,7 +38,7 @@ namespace Project1_Group_4.Classes
         {
 
         }
-        public Dictionary<string, CityInfo> ParseFile(string Filename, eFileType extension)
+        public Dictionary<int, CityInfo> ParseFile(string Filename, eFileType extension)
         {
             // create the delegate
 
