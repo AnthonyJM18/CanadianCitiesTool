@@ -17,14 +17,14 @@ namespace Project1_Group_4.Classes
             using (var reader = new StreamReader(filename))
             {
                 reader.ReadLine();
-                var file = reader.ReadToEnd();
+                var file = reader.ReadToEnd().Trim();
                 var lines = file.Split('\n');
 
                 foreach (var line in lines)
                 {
                     var cityInfo = line.Split(',');
 
-                    CityInfo city = new CityInfo(int.Parse(cityInfo[8]), cityInfo[1], cityInfo[2], int.Parse(cityInfo[7]), cityInfo[5],
+                    CityInfo city = new CityInfo(int.Parse(cityInfo[8]), cityInfo[0], cityInfo[1], int.Parse(cityInfo[7]), cityInfo[5],
                         decimal.Parse(cityInfo[2]), decimal.Parse(cityInfo[3]), cityInfo[6] == "admin");
 
                     FileData.Add(city.CityID, city);
