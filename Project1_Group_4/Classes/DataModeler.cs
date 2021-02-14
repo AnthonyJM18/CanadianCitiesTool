@@ -42,7 +42,6 @@ namespace Project1_Group_4.Classes
                 CityInfo cityInfo = new CityInfo(city.id,city.city, city.city_ascii, city.population, city.admin_name, city.lat, city.lng, capital);
                 FileData.Add(cityInfo.CityID, cityInfo);
             }
-            Console.WriteLine(cities.Count);
         }
         private void ParseXML(string filename)
         {
