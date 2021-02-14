@@ -6,7 +6,7 @@ namespace Project1_Group_4.Classes
 {
     public class CityInfo
     {
-        public string CityID { get; private set; }
+        public int CityID { get; private set; }
         public string CityName { get; private set; }
         public string CityAscii { get; private set; }
         public int Population { get; set; }
@@ -17,7 +17,7 @@ namespace Project1_Group_4.Classes
 
         public CityInfo() { }
 
-        public CityInfo(string id, string name, string ascii, int pop, string prov, decimal lat, decimal lng, bool iscap)
+        public CityInfo(int id, string name, string ascii, int pop, string prov, decimal lat, decimal lng, bool iscap)
         {
             CityID = id;
             CityName = name;
