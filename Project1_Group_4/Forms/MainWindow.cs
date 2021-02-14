@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project1_Group_4.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,11 @@ namespace Project1_Group_4.Forms
 {
     public partial class MainWindow : Form
     {
+        CityInfo selectedCity;
+        List<CityInfo> cities;
         public MainWindow()
         {
             InitializeComponent();
-
         }
 
         private void button_CompareCities_Click(object sender, EventArgs e)
@@ -49,6 +51,11 @@ namespace Project1_Group_4.Forms
         private void button_LoadXML_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void listBox_cities_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedCity = (CityInfo)listBox_cities.SelectedItem;
         }
     }
 }

@@ -33,7 +33,6 @@ namespace Project1_Group_4.Forms
             this.button_LoadXML = new System.Windows.Forms.Button();
             this.button_LoadJSON = new System.Windows.Forms.Button();
             this.button_LoadCSV = new System.Windows.Forms.Button();
-            this.listView_Cities = new System.Windows.Forms.ListView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -56,6 +55,7 @@ namespace Project1_Group_4.Forms
             this.textBox_ProvincePopulation = new System.Windows.Forms.TextBox();
             this.textBox_CapitalCity = new System.Windows.Forms.TextBox();
             this.label_About = new System.Windows.Forms.Label();
+            this.listBox_cities = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -117,15 +117,6 @@ namespace Project1_Group_4.Forms
             this.button_LoadCSV.Text = "Load CSV";
             this.button_LoadCSV.UseVisualStyleBackColor = false;
             this.button_LoadCSV.Click += new System.EventHandler(this.button_LoadCSV_Click);
-            // 
-            // listView_Cities
-            // 
-            this.listView_Cities.HideSelection = false;
-            this.listView_Cities.Location = new System.Drawing.Point(12, 198);
-            this.listView_Cities.Name = "listView_Cities";
-            this.listView_Cities.Size = new System.Drawing.Size(230, 209);
-            this.listView_Cities.TabIndex = 4;
-            this.listView_Cities.UseCompatibleStateImageBehavior = false;
             // 
             // tableLayoutPanel1
             // 
@@ -425,6 +416,15 @@ namespace Project1_Group_4.Forms
             this.label_About.Text = "?";
             this.label_About.Click += new System.EventHandler(this.label_About_Click);
             // 
+            // listBox_cities
+            // 
+            this.listBox_cities.FormattingEnabled = true;
+            this.listBox_cities.Location = new System.Drawing.Point(12, 198);
+            this.listBox_cities.Name = "listBox_cities";
+            this.listBox_cities.Size = new System.Drawing.Size(230, 212);
+            this.listBox_cities.TabIndex = 9;
+            this.listBox_cities.SelectedIndexChanged += new System.EventHandler(this.listBox_cities_SelectedIndexChanged);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -433,12 +433,12 @@ namespace Project1_Group_4.Forms
             this.BackgroundImage = global::Project1_Group_4.Properties.Resources.background1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(809, 457);
+            this.Controls.Add(this.listBox_cities);
             this.Controls.Add(this.label_About);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.comboBox_Province);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.listView_Cities);
             this.Controls.Add(this.button_LoadCSV);
             this.Controls.Add(this.button_LoadJSON);
             this.Controls.Add(this.button_LoadXML);
@@ -467,7 +467,6 @@ namespace Project1_Group_4.Forms
         private System.Windows.Forms.Button button_LoadXML;
         private System.Windows.Forms.Button button_LoadJSON;
         private System.Windows.Forms.Button button_LoadCSV;
-        private System.Windows.Forms.ListView listView_Cities;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -490,5 +489,6 @@ namespace Project1_Group_4.Forms
         private System.Windows.Forms.Button button_CompareCities;
         private System.Windows.Forms.Button button_ViewMap;
         private System.Windows.Forms.Label label_About;
+        private System.Windows.Forms.ListBox listBox_cities;
     }
 }

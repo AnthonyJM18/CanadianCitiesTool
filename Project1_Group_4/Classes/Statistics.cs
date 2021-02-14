@@ -21,14 +21,23 @@ namespace Project1_Group_4.Classes
         public Statistics(string filePath)
         {
             // If filepath exists 
-                
+            if (File.Exists(filePath)) {
                 // set file path
+                FilePath = filePath;
 
                 // get file extension and set it
+                Enum.TryParse(filePath.Split('.')[1].ToUpper(), out eFileType type);
+                FileType = type;
 
                 // call the DataModeler parse file and store the reusting dictionary in the CityCatalogue dictionary
-
+                DataModeler modeler = new DataModeler();
+                CityCatalogue = modeler.ParseFile(FilePath, FileType);
+            }
             // else throw exception
+            else
+            {
+                throw new FileNotFoundException("The file " + filePath + " Could not be found");
+            }
         }
 
         // City Methods
@@ -82,7 +91,7 @@ namespace Project1_Group_4.Classes
         public string ShowCityOnMap(CityInfo city)
         {
             // First get lat and lng of the city
-            return $"https://www.bing.com/maps?osid=518e8d2d-ea6e-494f-9f16-6835d4a19ea0&cp= {city.Latitude}~{city.Longitude}&lvl=14&style=h&v=2&sV=2&form=S00027";
+            return $"https://www.bing.com/maps?osid=518e8d2d-ea6e-494f-9f16-6835d4a19ea0&cp={city.Latitude}~{city.Longitude}&lvl=14&style=h&v=2&sV=2&form=S00027";
         }
         public decimal CalculateDistanceBetweenCities(CityInfo city1, CityInfo city2)
         {
@@ -126,32 +135,32 @@ namespace Project1_Group_4.Classes
             return CityCatalogue.Values.Where(c => c.Province == province).ToList();
            
         }
-        public List<KeyValuePair<string, int>> RankProvincesByPopulation()
-        {
-            // Get the population for every province
+        //public List<KeyValuePair<string, int>> RankProvincesByPopulation()
+        //{
+        //    // Get the population for every province
 
-            // return a list of the province names, and populations
-            return NotImplementedException;
-        }
-        public List<KeyValuePair<string, int>> RankProvincesByCities()
-        {
-            // get the number of cities for each province
+        //    // return a list of the province names, and populations
+        //    return NotImplementedException;
+        //}
+        //public List<KeyValuePair<string, int>> RankProvincesByCities()
+        //{
+        //    // get the number of cities for each province
 
-            // return a list of province names, and the number of cities
-            return NotImplementedException;
-        }
-        public CityInfo GetCapital(string province)
-        {
-            // Get the capital of the province
+        //    // return a list of province names, and the number of cities
+        //    return NotImplementedException;
+        //}
+        //public CityInfo GetCapital(string province)
+        //{
+        //    // Get the capital of the province
 
-            // return it
-            return NotImplementedException;
-        }
-        public string CityPopulationChangeEvent()
-        {
-            // maybe return a string about what change occured and let ui/client/user handle it
+        //    // return it
+        //    return NotImplementedException;
+        //}
+        //public string CityPopulationChangeEvent()
+        //{
+        //    // maybe return a string about what change occured and let ui/client/user handle it
 
-            return NotImplementedException;
-        }
+        //    return NotImplementedException;
+        //}
     }
 }
