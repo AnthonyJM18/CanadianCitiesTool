@@ -42,6 +42,7 @@ namespace Project1_Group_4.Forms
         private void button_LoadCSV_Click(object sender, EventArgs e)
         {
             stats = new Statistics("./Data/Canadacities.csv");
+            listBox_cities.Items.Clear();
             foreach (var city in stats.CityCatalogue.Values)
             {
                 listBox_cities.Items.Add(city);
@@ -50,12 +51,22 @@ namespace Project1_Group_4.Forms
 
         private void button_LoadJSON_Click(object sender, EventArgs e)
         {
-            stats = new Statistics("./Canadacities-JSON.json");
+            stats = new Statistics("./Data/Canadacities-JSON.json");
+            listBox_cities.Items.Clear();
+            foreach (var city in stats.CityCatalogue.Values)
+            {
+                listBox_cities.Items.Add(city);
+            }
         }
 
         private void button_LoadXML_Click(object sender, EventArgs e)
         {
-            stats = new Statistics("./Canadacities-XML.xml");
+            stats = new Statistics("./Data/Canadacities-XML.xml");
+            listBox_cities.Items.Clear();
+            foreach (var city in stats.CityCatalogue.Values)
+            {
+                listBox_cities.Items.Add(city);
+            }
         }
 
         private void listBox_cities_SelectedIndexChanged(object sender, EventArgs e)

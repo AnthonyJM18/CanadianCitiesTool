@@ -46,5 +46,10 @@ namespace Project1_Group_4.Classes
             return new LatLng(Latitude, Longitude);
         }
 
+        public override string ToString()
+        {
+            return $"{CityName}, {Province}";
+        }
+
     }
 }
