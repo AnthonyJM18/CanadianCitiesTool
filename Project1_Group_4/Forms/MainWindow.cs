@@ -34,7 +34,7 @@ namespace Project1_Group_4.Forms
 
         private void button_ViewMap_Click(object sender, EventArgs e)
         {
-            var map = new MapWindow();
+            var map = new MapWindow(stats.ShowCityOnMap(selectedCity));
             map.Show();
         }
 

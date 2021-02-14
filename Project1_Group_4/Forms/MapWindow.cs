@@ -12,9 +12,10 @@ namespace Project1_Group_4.Forms
 {
     public partial class MapWindow : Form
     {
-        public MapWindow()
+        public MapWindow(string url)
         {
             InitializeComponent();
+            this.webBrowser_map.Navigate(url);
         }
     }
 }

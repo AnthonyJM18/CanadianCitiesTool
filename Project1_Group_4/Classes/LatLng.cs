@@ -17,7 +17,7 @@ namespace Project1_Group_4.Classes
 
         public override string ToString()
         {
-            return $"{Latitude}, {Longitude}";
+            return $"{Math.Round(Latitude,4)}, {Math.Round(Longitude, 4)}";
         }
     }
 }
