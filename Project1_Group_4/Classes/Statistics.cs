@@ -129,29 +129,47 @@ namespace Project1_Group_4.Classes
         public List<KeyValuePair<string, int>> RankProvincesByPopulation()
         {
             // Get the population for every province
+            return (List<KeyValuePair<string, int>>)CityCatalogue.Values.GroupBy(c => c.Province, c => c.Population, (key, value) => new
+            {
+                Province = key,
+                Population = value.Sum()
+            });
 
-            // return a list of the province names, and populations
-            return NotImplementedException;
+            //List<CityInfo> manitoba = CityCatalogue.Values.Where(c => c.Province == "Manitoba").ToList();
+            //List <CityInfo> newfoundland = CityCatalogue.Values.Where(c => c.Province == "Newfoundland and Labrador").ToList();
+            //List <CityInfo> quebec = CityCatalogue.Values.Where(c => c.Province == "Québec").ToList();
+            //List <CityInfo> yukon = CityCatalogue.Values.Where(c => c.Province == "Yukon").ToList();
+            //List <CityInfo> saskatchewan = CityCatalogue.Values.Where(c => c.Province == "Saskatchewan").ToList();
+            //List <CityInfo> novascotia = CityCatalogue.Values.Where(c => c.Province == "Nova Scotia").ToList();
+            //List <CityInfo> alberta = CityCatalogue.Values.Where(c => c.Province == "Alberta").ToList();
+            //List <CityInfo> ontario = CityCatalogue.Values.Where(c => c.Province == "Ontario").ToList();
+            //List <CityInfo> saskatchewan = CityCatalogue.Values.Where(c => c.Province == "Saskatchewan").ToList();
+            //List <CityInfo> northwestterritories = CityCatalogue.Values.Where(c => c.Province == "Northwest Territories").ToList();
+            //List <CityInfo> nunavut = CityCatalogue.Values.Where(c => c.Province == "Nunavut").ToList();
+            //List <CityInfo> britishcolumbia = CityCatalogue.Values.Where(c => c.Province == "British Columbia").ToList();
+            //List <CityInfo> pei = CityCatalogue.Values.Where(c => c.Province == "Prince Edward Island").ToList();
+
         }
         public List<KeyValuePair<string, int>> RankProvincesByCities()
         {
             // get the number of cities for each province
-
-            // return a list of province names, and the number of cities
-            return NotImplementedException;
+            return (List<KeyValuePair<string, int>>)CityCatalogue.Values.GroupBy(c => c.Province, c => c.CityName, (key, value) => new
+            {
+                Province = key,
+                Cities = value,
+            });
         }
+
         public CityInfo GetCapital(string province)
         {
             // Get the capital of the province
-
-            // return it
-            return NotImplementedException;
+            return CityCatalogue.Values.SingleOrDefault(c => c.Province == province && c.IsCapital == true);
         }
+
         public string CityPopulationChangeEvent()
         {
             // maybe return a string about what change occured and let ui/client/user handle it
-
-            return NotImplementedException;
+            return null;
         }
     }
 }
