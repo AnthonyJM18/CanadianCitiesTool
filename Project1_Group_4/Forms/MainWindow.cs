@@ -15,6 +15,7 @@ namespace Project1_Group_4.Forms
     {
         CityInfo selectedCity;
         List<CityInfo> cities;
+        Statistics stats;
         public MainWindow()
         {
             InitializeComponent();
@@ -40,17 +41,17 @@ namespace Project1_Group_4.Forms
 
         private void button_LoadCSV_Click(object sender, EventArgs e)
         {
-
+            stats = new Statistics("./Canadacities.csv");
         }
 
         private void button_LoadJSON_Click(object sender, EventArgs e)
         {
-
+            stats = new Statistics("./Canadacities-JSON.json");
         }
 
         private void button_LoadXML_Click(object sender, EventArgs e)
         {
-
+            stats = new Statistics("./Canadacities-XML.xml");
         }
 
         private void listBox_cities_SelectedIndexChanged(object sender, EventArgs e)

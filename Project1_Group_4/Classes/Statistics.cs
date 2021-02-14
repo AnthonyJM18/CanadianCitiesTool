@@ -135,32 +135,32 @@ namespace Project1_Group_4.Classes
             return CityCatalogue.Values.Where(c => c.Province == province).ToList();
            
         }
-        //public List<KeyValuePair<string, int>> RankProvincesByPopulation()
-        //{
-        //    // Get the population for every province
+        public List<KeyValuePair<string, int>> RankProvincesByPopulation()
+        {
+            // Get the population for every province
 
-        //    // return a list of the province names, and populations
-        //    return NotImplementedException;
-        //}
-        //public List<KeyValuePair<string, int>> RankProvincesByCities()
-        //{
-        //    // get the number of cities for each province
+            // return a list of the province names, and populations
+            return NotImplementedException;
+        }
+        public List<KeyValuePair<string, int>> RankProvincesByCities()
+        {
+            // get the number of cities for each province
 
-        //    // return a list of province names, and the number of cities
-        //    return NotImplementedException;
-        //}
-        //public CityInfo GetCapital(string province)
-        //{
-        //    // Get the capital of the province
+            // return a list of province names, and the number of cities
+            return NotImplementedException;
+        }
+        public CityInfo GetCapital(string province)
+        {
+            // Get the capital of the province
 
-        //    // return it
-        //    return NotImplementedException;
-        //}
-        //public string CityPopulationChangeEvent()
-        //{
-        //    // maybe return a string about what change occured and let ui/client/user handle it
+            // return it
+            return NotImplementedException;
+        }
+        public string CityPopulationChangeEvent()
+        {
+            // maybe return a string about what change occured and let ui/client/user handle it
 
-        //    return NotImplementedException;
-        //}
+            return NotImplementedException;
+        }
     }
 }
