@@ -22,7 +22,7 @@ namespace Project1_Group_4.Forms
 
         private void button_CompareCities_Click(object sender, EventArgs e)
         {
-            var compare = new CompareWindow();
+            var compare = new CompareWindow(selectedCity, listBox_cities.Items, stats);
             compare.ShowDialog();
         }
 
