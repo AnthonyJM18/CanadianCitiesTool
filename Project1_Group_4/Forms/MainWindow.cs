@@ -14,7 +14,6 @@ namespace Project1_Group_4.Forms
     public partial class MainWindow : Form
     {
         CityInfo selectedCity;
-        List<CityInfo> cities;
         Statistics stats;
         public MainWindow()
         {
@@ -72,6 +71,7 @@ namespace Project1_Group_4.Forms
         private void listBox_cities_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedCity = (CityInfo)listBox_cities.SelectedItem;
+            this.textBox_CityName.Text = selectedCity.CityName;
         }
     }
 }

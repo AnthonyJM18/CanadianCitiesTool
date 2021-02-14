@@ -26,8 +26,19 @@ namespace Project1_Group_4.Classes
                 FilePath = filePath;
 
                 // get file extension and set it
-                Enum.TryParse(filePath.Split('.')[1].ToUpper(), out eFileType type);
-                FileType = type;
+                switch (filePath.Split('.')[2].ToUpper())
+                {
+                    case "CSV":
+                        FileType = eFileType.CSV;
+                        break;
+                    case "XML":
+                        FileType = eFileType.XML;
+                        break;
+                    case "JSON":
+                        FileType = eFileType.JSON;
+                        break;
+
+                }
 
                 // call the DataModeler parse file and store the reusting dictionary in the CityCatalogue dictionary
                 DataModeler modeler = new DataModeler();
