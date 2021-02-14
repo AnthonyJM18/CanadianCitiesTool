@@ -15,6 +15,7 @@ namespace Project1_Group_4.Forms
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
     }
