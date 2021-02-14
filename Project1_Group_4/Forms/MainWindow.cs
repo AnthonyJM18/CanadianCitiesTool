@@ -18,5 +18,36 @@ namespace Project1_Group_4.Forms
 
         }
 
+        private void button_CompareCities_Click(object sender, EventArgs e)
+        {
+            var compare = new CompareWindow();
+            compare.ShowDialog();
+        }
+
+        private void label_About_Click(object sender, EventArgs e)
+        {
+            var about = new AboutWindow();
+            about.Show();
+        }
+
+        private void button_ViewMap_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_LoadCSV_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_LoadJSON_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_LoadXML_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
