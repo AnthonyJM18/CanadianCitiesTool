@@ -2,9 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Xml;
-using System.IO;
 using Newtonsoft.Json;
 
 namespace Project1_Group_4.Classes
@@ -122,13 +120,34 @@ namespace Project1_Group_4.Classes
         }
         public Dictionary<int, CityInfo> ParseFile(string Filename, eFileType extension)
         {
+            // clean FileData dictionary
+            FileData = new Dictionary<int, CityInfo>();
+
             // create the delegate
+            SetupDataFile setupData = null;
 
             // switch on extension type to assign the correct method to the delegate
-
-            // Maybe add a data cleaning method to delegate
+            switch (extension)
+            {
+                case eFileType.CSV:
+                    {
+                        setupData = ParseCSV;
+                        break;
+                    }
+                case eFileType.JSON:
+                    {
+                        setupData = ParseJSON;
+                        break;
+                    }
+                case eFileType.XML:
+                    {
+                        setupData = ParseXML;
+                        break;
+                    }
+            }
 
             // call delegate and return the parsed data
+            setupData(Filename);
 
             return FileData;
         }
