@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Xml;
 
 namespace Project1_Group_4.Classes
 {
@@ -36,7 +37,77 @@ namespace Project1_Group_4.Classes
         }
         private void ParseXML(string filename)
         {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(filename);
 
+            //get node list of canadian cities
+            XmlNode root = doc.DocumentElement;
+            XmlElement rootElement = (XmlElement)root;
+            XmlNodeList cities = rootElement.SelectNodes("//CanadaCity");
+
+            foreach (XmlNode n in cities)
+            {
+
+                int id = 0;
+                string name = "";
+                string ascii = "";
+                int population = 0;
+                string province = "";
+                decimal lat = 0;
+                decimal lng = 0;
+                bool iscap = false;
+                foreach (XmlNode child in n.ChildNodes)
+                {
+                    string childName = child.Name;
+                    switch (childName)
+                    {
+                        case "city":
+                            {
+                                name = child.InnerText;
+                                break;
+                            }
+                        case "city_ascii":
+                            {
+                                ascii = child.InnerText;
+                                break;
+                            }
+                        case "lat":
+                            {
+                                lat = decimal.Parse(child.InnerText);
+                                break;
+                            }
+                        case "lng":
+                            {
+                                lng = decimal.Parse(child.InnerText);
+                                break;
+                            }
+                        case "admin_name":
+                            {
+                                province = child.InnerText;
+                                break;
+                            }
+                        case "capital":
+                            {
+                                string capital = child.InnerText;
+                                iscap = capital == "admin" ? true : false;
+                                break;
+                            }
+                        case "population":
+                            {
+                                population = int.Parse(child.InnerText);
+                                break;
+                            }
+                        case "id":
+                            {
+                                id = int.Parse(child.InnerText);
+                                break;
+                            }
+                    }
+                }
+                CityInfo city = new CityInfo(id, name, ascii, population, province, lat, lng, iscap);
+
+                FileData.Add(city.CityID, city);
+            }
         }
         public Dictionary<int, CityInfo> ParseFile(string Filename, eFileType extension)
         {
@@ -48,7 +119,7 @@ namespace Project1_Group_4.Classes
 
             // call delegate and return the parsed data
 
-            return NotImplementedException;
+            return FileData;
         }
     }
 }
