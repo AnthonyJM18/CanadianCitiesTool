@@ -1,5 +1,11 @@
-﻿using Project1_Group_4.Enums;
-using System;
+﻿/* Project Group Number:        4
+ * Project Members:             Anthony Merante, Colin Manliclic, Zina Long
+ * Date:                        2021/02/14
+ * 
+ * Purpose:                     This class holds the methods to parse the data files and add to the dictionary using a delegate
+ */
+
+using Project1_Group_4.Enums;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;
@@ -12,14 +18,21 @@ namespace Project1_Group_4.Classes
         Dictionary<int, CityInfo> FileData;
         private delegate void SetupDataFile(string filename);
 
+        /// <summary>
+        /// Reads csv file, parses the data in a CityInfo object and adds it to a dictionary of an int id and CityInfo object
+        /// </summary>
+        /// <param name="filename"></param>
         private void ParseCSV(string filename)
         {
             using (var reader = new StreamReader(filename))
             {
                 reader.ReadLine();
                 var file = reader.ReadToEnd().Trim();
+
+                //parse data
                 var lines = file.Split('\n');
 
+                // create city object and add to dictionary
                 foreach (var line in lines)
                 {
                     var cityInfo = line.Split(',');
@@ -31,11 +44,18 @@ namespace Project1_Group_4.Classes
                 }
             }
         }
+        /// <summary>
+        /// Reads JSON file, parses the data in a CityInfo object and adds it to a dictionary of an int id and CityInfo object
+        /// </summary>
+        /// <param name="filename"></param>
         private void ParseJSON(string filename)
         {
             string json = File.ReadAllText(filename);
+
+            // parse data
             List<CityHelper> cities = JsonConvert.DeserializeObject<List<CityHelper>>(json);
 
+            // create city object and add to dictionary
             foreach (CityHelper city in cities)
             {
                 bool capital = city.capital == "admin";
@@ -43,6 +63,10 @@ namespace Project1_Group_4.Classes
                 FileData.Add(cityInfo.CityID, cityInfo);
             }
         }
+        /// <summary>
+        /// Reads XML file, parses the data in a CityInfo object and adds it to a dictionary of an int id and CityInfo object
+        /// </summary>
+        /// <param name="filename"></param>
         private void ParseXML(string filename)
         {
             XmlDocument doc = new XmlDocument();
@@ -55,7 +79,7 @@ namespace Project1_Group_4.Classes
 
             foreach (XmlNode n in cities)
             {
-
+                // variables to match cityinfo data
                 int id = 0;
                 string name = "";
                 string ascii = "";
@@ -64,8 +88,10 @@ namespace Project1_Group_4.Classes
                 decimal lat = 0;
                 decimal lng = 0;
                 bool iscap = false;
+
                 foreach (XmlNode child in n.ChildNodes)
                 {
+                    // change variables to matching switch case
                     string childName = child.Name;
                     switch (childName)
                     {
@@ -112,11 +138,18 @@ namespace Project1_Group_4.Classes
                             }
                     }
                 }
+                // create CityInfo object and add to dictionary
                 CityInfo city = new CityInfo(id, name, ascii, population, province, lat, lng, iscap);
 
                 FileData.Add(city.CityID, city);
             }
         }
+        /// <summary>
+        /// Initialize dictionary object, then depending on efile type, initialize delegate and to load data in dictionary and return dictionary
+        /// </summary>
+        /// <param name="Filename"></param>
+        /// <param name="extension"></param>
+        /// <returns>Dictonary<int, CityInfo></int></returns>
         public Dictionary<int, CityInfo> ParseFile(string Filename, eFileType extension)
         {
             // clean FileData dictionary
