@@ -162,6 +162,33 @@ namespace Project1_Group_4.Classes
 
             FileData = orderedList.ToDictionary(x => x.Value.CityID, x => x.Value);
         }
+
+        public List<Province> LoadProvinceList()
+        {
+            List<Province> provinces = new List<Province>();
+
+            Province alberta = new Province();
+            Province bristishColumbia = new Province();
+            Province manitoba = new Province();
+            Province newBrunswick = new Province();
+            Province newfoundland = new Province();
+            Province labrador = new Province();
+            Province novaScotia = new Province();
+            Province ontario = new Province();
+            Province princeEdwardIsland = new Province();
+            Province quebec = new Province();
+            Province saskatchewan = new Province();
+            Province northwestTerritories = new Province();
+            Province nunavut = new Province();
+            Province yukon = new Province(); ;
+
+            foreach(CityInfo city in FileData.Values)
+            {
+                
+            }
+
+            return provinces;
+        }
         /// <summary>
         /// Initialize dictionary object, then depending on efile type, initialize delegate and to load data in dictionary and return dictionary
         /// </summary>
