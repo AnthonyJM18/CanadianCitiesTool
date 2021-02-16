@@ -59,6 +59,7 @@ namespace Project1_Group_4.Forms
 
         private void button_LoadCSV_Click(object sender, EventArgs e)
         {
+            isLoading = true;
             stats = new Statistics("./Data/Canadacities.csv");
             listBox_cities.Items.Clear();
             foreach (var city in stats.CityCatalogue.Values)
@@ -70,6 +71,7 @@ namespace Project1_Group_4.Forms
 
         private void button_LoadJSON_Click(object sender, EventArgs e)
         {
+            isLoading = true;
             stats = new Statistics("./Data/Canadacities-JSON.json");
             listBox_cities.Items.Clear();
             foreach (var city in stats.CityCatalogue.Values)
@@ -81,6 +83,7 @@ namespace Project1_Group_4.Forms
 
         private void button_LoadXML_Click(object sender, EventArgs e)
         {
+            isLoading = true;
             stats = new Statistics("./Data/Canadacities-XML.xml");
             listBox_cities.Items.Clear();
             foreach (var city in stats.CityCatalogue.Values)
