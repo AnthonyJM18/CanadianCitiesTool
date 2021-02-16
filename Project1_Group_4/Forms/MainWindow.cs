@@ -15,9 +15,24 @@ namespace Project1_Group_4.Forms
     {
         CityInfo selectedCity;
         Statistics stats;
+        bool isLoading = false;
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        public void LoadProvinces()
+        {
+            this.comboBox_Province.SelectedIndex = 0;
+            List<string> provinces = stats.GetProvinces();
+            foreach (var prov in provinces)
+            {
+                if (prov != null)
+                {
+                    this.comboBox_Province.Items.Add(prov);
+                }
+            }
+            isLoading = false;
         }
 
         private void button_CompareCities_Click(object sender, EventArgs e)
@@ -40,32 +55,38 @@ namespace Project1_Group_4.Forms
 
         private void button_LoadCSV_Click(object sender, EventArgs e)
         {
+            isLoading = true;
             stats = new Statistics("./Data/Canadacities.csv");
             listBox_cities.Items.Clear();
             foreach (var city in stats.CityCatalogue.Values)
             {
                 listBox_cities.Items.Add(city);
             }
+            LoadProvinces();
         }
 
         private void button_LoadJSON_Click(object sender, EventArgs e)
         {
+            isLoading = true;
             stats = new Statistics("./Data/Canadacities-JSON.json");
             listBox_cities.Items.Clear();
             foreach (var city in stats.CityCatalogue.Values)
             {
                 listBox_cities.Items.Add(city);
             }
+            LoadProvinces();
         }
 
         private void button_LoadXML_Click(object sender, EventArgs e)
         {
+            isLoading = true;
             stats = new Statistics("./Data/Canadacities-XML.xml");
             listBox_cities.Items.Clear();
             foreach (var city in stats.CityCatalogue.Values)
             {
                 listBox_cities.Items.Add(city);
             }
+            LoadProvinces();
         }
 
         private void listBox_cities_SelectedIndexChanged(object sender, EventArgs e)
@@ -78,6 +99,30 @@ namespace Project1_Group_4.Forms
             this.textBox_ProvincePopulation.Text = $"{stats.DisplayProvincePopulation(selectedCity.GetProvince())}";
             this.textBox_CapitalCity.Text = stats.GetCapital(selectedCity.GetProvince()).CityName;
 
+        }
+
+        private void comboBox_Province_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!isLoading)
+            {
+                if (this.comboBox_Province.SelectedIndex >= 0)
+                {
+                    listBox_cities.Items.Clear();
+                    foreach (var city in stats.DisplayProvinceCities(this.comboBox_Province.Text))
+                    {
+                        listBox_cities.Items.Add(city);
+                    }
+                }
+                else
+                {
+                    listBox_cities.Items.Clear();
+                    foreach (var city in stats.CityCatalogue.Values)
+                    {
+                        listBox_cities.Items.Add(city);
+                    }
+                }
+            }
+            
         }
     }
 }

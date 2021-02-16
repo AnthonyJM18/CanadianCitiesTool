@@ -120,7 +120,6 @@ namespace Project1_Group_4.Classes
                     JObject json = JObject.Parse(responseString);
 
                     decimal distance = (decimal)json.SelectToken("$.resourceSets[0].resources[0].results[0].travelDistance");
-
                     return distance;
                 }
 
@@ -146,6 +145,12 @@ namespace Project1_Group_4.Classes
             return CityCatalogue.Values.Where(c => c.Province == province).ToList();
 
         }
+
+        public List<string> GetProvinces()
+        {
+            return (List<string>)CityCatalogue.Select(x => x.Value.Province).Distinct().ToList();
+        }
+
         public List<KeyValuePair<string, int>> RankProvincesByPopulation()
         {
             // Get the population for every province
