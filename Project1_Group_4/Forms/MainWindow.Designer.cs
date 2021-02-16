@@ -294,7 +294,6 @@ namespace Project1_Group_4.Forms
             this.comboBox_Province.Name = "comboBox_Province";
             this.comboBox_Province.Size = new System.Drawing.Size(230, 32);
             this.comboBox_Province.TabIndex = 7;
-            this.comboBox_Province.SelectedIndexChanged += new System.EventHandler(this.comboBox_Province_SelectedIndexChanged);
             // 
             // groupBox2
             // 

@@ -120,12 +120,36 @@ namespace Project1_Group_4.Classes
                     JObject json = JObject.Parse(responseString);
 
                     decimal distance = (decimal)json.SelectToken("$.resourceSets[0].resources[0].results[0].travelDistance");
+
+                    if (distance == -1)
+                    {
+                        return CalculateDistanceManual(city1, city2);
+                    }
+
                     return distance;
                 }
-
-                throw new HttpRequestException();
+                else
+                {
+                    return CalculateDistanceManual(city1, city2);
+                }
             }
 
+        }
+
+        private decimal CalculateDistanceManual(CityInfo city1, CityInfo city2)
+        {
+            double rlat1 = Math.PI * (double)city1.Latitude / 180;
+            double rlat2 = Math.PI * (double)city2.Latitude / 180;
+            double theta = (double)city1.Longitude - (double)city2.Longitude;
+            double rtheta = Math.PI * theta / 180;
+            double dist =
+                Math.Sin(rlat1) * Math.Sin(rlat2) + Math.Cos(rlat1) *
+                Math.Cos(rlat2) * Math.Cos(rtheta);
+            dist = Math.Acos(dist);
+            dist = dist * 180 / Math.PI;
+            dist = dist * 60 * 1.1515;
+
+            return (decimal)Math.Round(dist * 1.609344, 3);
         }
 
         // Province Methods

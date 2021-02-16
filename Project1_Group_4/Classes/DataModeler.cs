@@ -60,7 +60,10 @@ namespace Project1_Group_4.Classes
             {
                 bool capital = city.capital == "admin";
                 CityInfo cityInfo = new CityInfo(city.id,city.city, city.city_ascii, city.population, city.admin_name, city.lat, city.lng, capital);
-                FileData.Add(cityInfo.CityID, cityInfo);
+                if (string.IsNullOrEmpty(cityInfo.CityName)) // handles last entry in json
+                {
+                    FileData.Add(cityInfo.CityID, cityInfo);
+                }
             }
         }
         /// <summary>
