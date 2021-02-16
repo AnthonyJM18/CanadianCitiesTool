@@ -43,18 +43,6 @@ namespace Project1_Group_4.Classes
 
                     FileData.Add(city.CityID, city);
                 }
-
-                List<KeyValuePair<int, CityInfo>> orderedList = FileData.ToList();
-
-                orderedList.Sort(
-                    delegate(KeyValuePair<int,CityInfo> pair1,
-                    KeyValuePair<int, CityInfo> pair2)
-                    {
-                        return pair1.Value.CityName.CompareTo(pair2.Value.CityName);
-                    }
-                );
-
-                FileData = orderedList.ToDictionary(x => x.Value.CityID, x => x.Value);
             }
         }
         /// <summary>
@@ -160,6 +148,20 @@ namespace Project1_Group_4.Classes
                 FileData.Add(city.CityID, city);
             }
         }
+        private void SortDictionary()
+        {
+            List<KeyValuePair<int, CityInfo>> orderedList = FileData.ToList();
+
+            orderedList.Sort(
+                delegate (KeyValuePair<int, CityInfo> pair1,
+                KeyValuePair<int, CityInfo> pair2)
+                {
+                    return pair1.Value.CityName.CompareTo(pair2.Value.CityName);
+                }
+            );
+
+            FileData = orderedList.ToDictionary(x => x.Value.CityID, x => x.Value);
+        }
         /// <summary>
         /// Initialize dictionary object, then depending on efile type, initialize delegate and to load data in dictionary and return dictionary
         /// </summary>
@@ -197,6 +199,7 @@ namespace Project1_Group_4.Classes
             // call delegate and return the parsed data
             setupData(Filename);
 
+            SortDictionary();
             return FileData;
         }
     }
