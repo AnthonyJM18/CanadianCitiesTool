@@ -49,7 +49,7 @@ namespace Project1_Group_4.Forms
             {
                 this.textBox_largerPop.Text = $"{this.statistics.CompareCitiesPopulation((CityInfo)this.comboBox_city1.SelectedItem, (CityInfo)this.comboBox_city2.SelectedItem)}";
                 decimal dec = this.statistics.CalculateDistanceBetweenCities((CityInfo)this.comboBox_city1.SelectedItem, (CityInfo)this.comboBox_city2.SelectedItem);
-                this.textBox_distance.Text = $"{dec}";
+                this.textBox_distance.Text = $"{dec} km";
             }
             catch (Exception ex)
             {

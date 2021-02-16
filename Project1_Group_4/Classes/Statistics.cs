@@ -119,7 +119,7 @@ namespace Project1_Group_4.Classes
 
                     JObject json = JObject.Parse(responseString);
 
-                    decimal distance = (decimal)json.SelectToken("x.resourceSets[0].resources[0].results[0].travelDistance");
+                    decimal distance = (decimal)json.SelectToken("$.resourceSets[0].resources[0].results[0].travelDistance");
 
                     return distance;
                 }

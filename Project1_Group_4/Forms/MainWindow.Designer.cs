@@ -49,11 +49,11 @@ namespace Project1_Group_4.Forms
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox_ProvinceName = new System.Windows.Forms.TextBox();
             this.textBox_ProvincePopulation = new System.Windows.Forms.TextBox();
             this.textBox_CapitalCity = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label_About = new System.Windows.Forms.Label();
             this.listBox_cities = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1.SuspendLayout();
@@ -342,21 +342,6 @@ namespace Project1_Group_4.Forms
             this.label4.Text = "Capital City";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 6);
-            this.label7.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 47);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Province";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // label8
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -404,6 +389,21 @@ namespace Project1_Group_4.Forms
             this.textBox_CapitalCity.ReadOnly = true;
             this.textBox_CapitalCity.Size = new System.Drawing.Size(145, 26);
             this.textBox_CapitalCity.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(3, 6);
+            this.label7.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 47);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Province";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label_About
             // 
