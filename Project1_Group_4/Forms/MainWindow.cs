@@ -16,6 +16,7 @@ namespace Project1_Group_4.Forms
         CityInfo selectedCity;
         Statistics stats;
         bool isLoading = false;
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -23,8 +24,11 @@ namespace Project1_Group_4.Forms
 
         public void LoadProvinces()
         {
+            this.comboBox_Province.Items.Clear();
+            this.comboBox_Province.Items.Add("Filter By Province....");
             this.comboBox_Province.SelectedIndex = 0;
             List<string> provinces = stats.GetProvinces();
+
             foreach (var prov in provinces)
             {
                 if (prov != null)
@@ -105,7 +109,7 @@ namespace Project1_Group_4.Forms
         {
             if (!isLoading)
             {
-                if (this.comboBox_Province.SelectedIndex >= 0)
+                if (this.comboBox_Province.SelectedIndex > 0)
                 {
                     listBox_cities.Items.Clear();
                     foreach (var city in stats.DisplayProvinceCities(this.comboBox_Province.Text))

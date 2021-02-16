@@ -53,6 +53,7 @@
     <Compile Include="Classes\CityInfo.cs" />
     <Compile Include="Classes\DataModeler.cs" />
     <Compile Include="Classes\LatLng.cs" />
+    <Compile Include="Classes\Province.cs" />
     <Compile Include="Classes\Statistics.cs" />
     <Compile Include="Enums\eFileType.cs" />
     <Compile Include="Forms\AboutWindow.cs">
