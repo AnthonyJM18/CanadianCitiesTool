@@ -9,6 +9,7 @@ using Project1_Group_4.Enums;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;
+using System.Linq;
 using Newtonsoft.Json;
 
 namespace Project1_Group_4.Classes
@@ -42,6 +43,18 @@ namespace Project1_Group_4.Classes
 
                     FileData.Add(city.CityID, city);
                 }
+
+                List<KeyValuePair<int, CityInfo>> orderedList = FileData.ToList();
+
+                orderedList.Sort(
+                    delegate(KeyValuePair<int,CityInfo> pair1,
+                    KeyValuePair<int, CityInfo> pair2)
+                    {
+                        return pair1.Value.CityName.CompareTo(pair2.Value.CityName);
+                    }
+                );
+
+                FileData = orderedList.ToDictionary(x => x.Value.CityID, x => x.Value);
             }
         }
         /// <summary>
@@ -60,7 +73,7 @@ namespace Project1_Group_4.Classes
             {
                 bool capital = city.capital == "admin";
                 CityInfo cityInfo = new CityInfo(city.id,city.city, city.city_ascii, city.population, city.admin_name, city.lat, city.lng, capital);
-                if (string.IsNullOrEmpty(cityInfo.CityName)) // handles last entry in json
+                if (!string.IsNullOrEmpty(cityInfo.CityName)) // handles last entry in json
                 {
                     FileData.Add(cityInfo.CityID, cityInfo);
                 }
