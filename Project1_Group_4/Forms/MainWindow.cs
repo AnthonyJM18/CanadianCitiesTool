@@ -65,6 +65,7 @@ namespace Project1_Group_4.Forms
             {
                 listBox_cities.Items.Add(city);
             }
+            LoadProvinces();
         }
 
         private void button_LoadJSON_Click(object sender, EventArgs e)
@@ -75,6 +76,7 @@ namespace Project1_Group_4.Forms
             {
                 listBox_cities.Items.Add(city);
             }
+            LoadProvinces();
         }
 
         private void button_LoadXML_Click(object sender, EventArgs e)
@@ -85,6 +87,7 @@ namespace Project1_Group_4.Forms
             {
                 listBox_cities.Items.Add(city);
             }
+            LoadProvinces();
         }
 
         private void listBox_cities_SelectedIndexChanged(object sender, EventArgs e)
