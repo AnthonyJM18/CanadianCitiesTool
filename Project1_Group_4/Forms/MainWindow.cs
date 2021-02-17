@@ -30,6 +30,7 @@ namespace Project1_Group_4.Forms
         {
             this.button_CompareProvs.Enabled = true;
             this.comboBox_Province.Items.Clear();
+            this.provinces.Clear();
             this.comboBox_Province.Items.Add("Filter By Province....");
             this.comboBox_Province.SelectedIndex = 0;
             List<string> provNames = stats.GetProvinces();
