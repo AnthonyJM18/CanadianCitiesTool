@@ -359,6 +359,7 @@ namespace Project1_Group_4.Forms
             this.button_CompareProvs.TabIndex = 3;
             this.button_CompareProvs.Text = "Provinces";
             this.button_CompareProvs.UseVisualStyleBackColor = false;
+            this.button_CompareProvs.Click += new System.EventHandler(this.button_CompareProvs_Click);
             // 
             // textBox_ProvinceName
             // 

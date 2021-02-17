@@ -101,7 +101,7 @@ namespace Project1_Group_4.Forms
             this.textBox_CityName.Text = selectedCity.CityName;
             this.textBox_CityPopulation.Text = $"{selectedCity.GetPopulation()}";
             this.textBox_Location.Text = selectedCity.GetLocation().ToString();
-            Province province = this.provinces.Find(p => p.Name.ToLower() == selectedCity.GetProvince().ToLower());
+            //Province province = this.provinces.Find(p => p.Name.ToLower() == selectedCity.GetProvince().ToLower());
             //this.textBox_ProvinceName.Text = province.Name;
             //this.textBox_ProvincePopulation.Text = $"{province.Population}";
             //this.textBox_CapitalCity.Text = province.Capital;
@@ -136,5 +136,10 @@ namespace Project1_Group_4.Forms
             
         }
 
+        private void button_CompareProvs_Click(object sender, EventArgs e)
+        {
+            var provWin = new ProvinceWindow(stats);
+            provWin.ShowDialog();
+        }
     }
 }

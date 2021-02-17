@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project1_Group_4.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,43 @@ namespace Project1_Group_4.Forms
 {
     public partial class ProvinceWindow : Form
     {
-        public ProvinceWindow()
+        Statistics stats;
+        public ProvinceWindow(Statistics stat)
         {
             InitializeComponent();
+            stats = stat;
+        }
+
+        private void button_SortCityAsec_Click(object sender, EventArgs e)
+        {
+            List<KeyValuePair<string, int>> provinces = stats.RankProvincesByCities();
+
+            foreach(var item in provinces)
+            {
+                this.listBox_Provinces.Items.Clear();
+                this.listBox_Provinces.Items.Add($"{item.Key} - {item.Value}");
+            }
+        }
+
+        private void button_SortCityDesc_Click(object sender, EventArgs e)
+        {
+            List<KeyValuePair<string, int>> provinces = stats.RankProvincesByCities();
+            provinces.Reverse();
+            foreach (var item in provinces)
+            {
+                this.listBox_Provinces.Items.Clear();
+                this.listBox_Provinces.Items.Add($"{item.Key} - {item.Value}");
+            }
+        }
+
+        private void button_SortPopAsec_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_SortPopDesc_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
