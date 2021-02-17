@@ -30,9 +30,16 @@ namespace Project1_Group_4.Forms
             this.comboBox_Province.Items.Add("Filter By Province....");
             this.comboBox_Province.SelectedIndex = 0;
             List<string> provinces = stats.GetProvinces();
+            Province p = new Province();
 
             foreach (var prov in provinces)
             {
+                p.Name = prov;
+                p.Population = stats.DisplayProvincePopulation(prov);
+                p.NumCities = stats.DisplayProvinceCities(prov).Count;
+                p.Capital = stats.GetCapital(prov).CityName;
+
+                this.provinces.Add(p);
                 if (prov != null)
                 {
                     this.comboBox_Province.Items.Add(prov);
