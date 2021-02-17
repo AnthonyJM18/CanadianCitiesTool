@@ -51,6 +51,7 @@
             this.ClientSize = new System.Drawing.Size(1184, 561);
             this.Controls.Add(this.webBrowser_map);
             this.Name = "MapWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MapWindow";
             this.ResumeLayout(false);
 

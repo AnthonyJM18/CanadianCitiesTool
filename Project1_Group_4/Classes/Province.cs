@@ -10,8 +10,7 @@ namespace Project1_Group_4.Classes
     {
         public string Name { get; set; }
         public int Population { get; set; }
-        public int PopulationRank { get; set; }
+        public string Capital { get; set; }
         public int NumCities { get; set; }
-        public int CityRank { get; set; }
     }
 }

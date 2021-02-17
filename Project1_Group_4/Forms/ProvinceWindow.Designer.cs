@@ -30,10 +30,10 @@ namespace Project1_Group_4.Forms
         private void InitializeComponent()
         {
             this.listBox_Provinces = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button_SortCityAsec = new System.Windows.Forms.Button();
+            this.button_SortCityDesc = new System.Windows.Forms.Button();
+            this.button_SortPopAsec = new System.Windows.Forms.Button();
+            this.button_SortPopDesc = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox_Provinces
@@ -44,57 +44,57 @@ namespace Project1_Group_4.Forms
             this.listBox_Provinces.Size = new System.Drawing.Size(292, 238);
             this.listBox_Provinces.TabIndex = 0;
             // 
-            // button1
+            // button_SortCityAsec
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
-            this.button1.FlatAppearance.BorderSize = 4;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(13, 257);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(292, 32);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Sort By Cities (Ascending)";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_SortCityAsec.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
+            this.button_SortCityAsec.FlatAppearance.BorderSize = 4;
+            this.button_SortCityAsec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_SortCityAsec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_SortCityAsec.Location = new System.Drawing.Point(13, 257);
+            this.button_SortCityAsec.Name = "button_SortCityAsec";
+            this.button_SortCityAsec.Size = new System.Drawing.Size(292, 32);
+            this.button_SortCityAsec.TabIndex = 1;
+            this.button_SortCityAsec.Text = "Sort By Cities (Ascending)";
+            this.button_SortCityAsec.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // button_SortCityDesc
             // 
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
-            this.button2.FlatAppearance.BorderSize = 4;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(13, 295);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(292, 32);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Sort By Cities (Descending)";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_SortCityDesc.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
+            this.button_SortCityDesc.FlatAppearance.BorderSize = 4;
+            this.button_SortCityDesc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_SortCityDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_SortCityDesc.Location = new System.Drawing.Point(13, 295);
+            this.button_SortCityDesc.Name = "button_SortCityDesc";
+            this.button_SortCityDesc.Size = new System.Drawing.Size(292, 32);
+            this.button_SortCityDesc.TabIndex = 2;
+            this.button_SortCityDesc.Text = "Sort By Cities (Descending)";
+            this.button_SortCityDesc.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // button_SortPopAsec
             // 
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
-            this.button3.FlatAppearance.BorderSize = 4;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(13, 333);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(292, 32);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Sort By Population (Ascending)";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button_SortPopAsec.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
+            this.button_SortPopAsec.FlatAppearance.BorderSize = 4;
+            this.button_SortPopAsec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_SortPopAsec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_SortPopAsec.Location = new System.Drawing.Point(13, 333);
+            this.button_SortPopAsec.Name = "button_SortPopAsec";
+            this.button_SortPopAsec.Size = new System.Drawing.Size(292, 32);
+            this.button_SortPopAsec.TabIndex = 3;
+            this.button_SortPopAsec.Text = "Sort By Population (Ascending)";
+            this.button_SortPopAsec.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // button_SortPopDesc
             // 
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
-            this.button4.FlatAppearance.BorderSize = 4;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(13, 371);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(292, 32);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Sort By Population (Descending)";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button_SortPopDesc.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
+            this.button_SortPopDesc.FlatAppearance.BorderSize = 4;
+            this.button_SortPopDesc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_SortPopDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_SortPopDesc.Location = new System.Drawing.Point(13, 371);
+            this.button_SortPopDesc.Name = "button_SortPopDesc";
+            this.button_SortPopDesc.Size = new System.Drawing.Size(292, 32);
+            this.button_SortPopDesc.TabIndex = 4;
+            this.button_SortPopDesc.Text = "Sort By Population (Descending)";
+            this.button_SortPopDesc.UseVisualStyleBackColor = true;
             // 
             // ProvinceWindow
             // 
@@ -103,13 +103,14 @@ namespace Project1_Group_4.Forms
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Project1_Group_4.Properties.Resources.background1;
             this.ClientSize = new System.Drawing.Size(317, 414);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_SortPopDesc);
+            this.Controls.Add(this.button_SortPopAsec);
+            this.Controls.Add(this.button_SortCityDesc);
+            this.Controls.Add(this.button_SortCityAsec);
             this.Controls.Add(this.listBox_Provinces);
             this.MaximizeBox = false;
             this.Name = "ProvinceWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ProvinceWindow";
             this.ResumeLayout(false);
 
@@ -118,9 +119,9 @@ namespace Project1_Group_4.Forms
         #endregion
 
         private System.Windows.Forms.ListBox listBox_Provinces;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button_SortCityAsec;
+        private System.Windows.Forms.Button button_SortCityDesc;
+        private System.Windows.Forms.Button button_SortPopAsec;
+        private System.Windows.Forms.Button button_SortPopDesc;
     }
 }

@@ -49,20 +49,18 @@ namespace Project1_Group_4.Forms
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.button_CompareProvs = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             this.textBox_ProvinceName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox_ProvPopRank = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox_CapitalCity = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox_ProvNumCities = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.textBox_ProvincePopulation = new System.Windows.Forms.TextBox();
-            this.textBox_provCityRank = new System.Windows.Forms.TextBox();
             this.label_About = new System.Windows.Forms.Label();
             this.listBox_cities = new System.Windows.Forms.ListBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -210,7 +208,7 @@ namespace Project1_Group_4.Forms
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(247, 161);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(247, 123);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label6
@@ -220,10 +218,10 @@ namespace Project1_Group_4.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 112);
+            this.label6.Location = new System.Drawing.Point(3, 88);
             this.label6.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 49);
+            this.label6.Size = new System.Drawing.Size(85, 35);
             this.label6.TabIndex = 6;
             this.label6.Text = "Location";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -238,7 +236,7 @@ namespace Project1_Group_4.Forms
             this.label5.Location = new System.Drawing.Point(3, 6);
             this.label5.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 47);
+            this.label5.Size = new System.Drawing.Size(85, 35);
             this.label5.TabIndex = 3;
             this.label5.Text = "City Name";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -250,10 +248,10 @@ namespace Project1_Group_4.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 59);
+            this.label3.Location = new System.Drawing.Point(3, 47);
             this.label3.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 47);
+            this.label3.Size = new System.Drawing.Size(85, 35);
             this.label3.TabIndex = 4;
             this.label3.Text = "Population";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -274,7 +272,7 @@ namespace Project1_Group_4.Forms
             this.textBox_CityPopulation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_CityPopulation.Location = new System.Drawing.Point(94, 56);
+            this.textBox_CityPopulation.Location = new System.Drawing.Point(94, 44);
             this.textBox_CityPopulation.Name = "textBox_CityPopulation";
             this.textBox_CityPopulation.Size = new System.Drawing.Size(150, 26);
             this.textBox_CityPopulation.TabIndex = 8;
@@ -285,7 +283,7 @@ namespace Project1_Group_4.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Location.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Location.Location = new System.Drawing.Point(94, 109);
+            this.textBox_Location.Location = new System.Drawing.Point(94, 85);
             this.textBox_Location.Name = "textBox_Location";
             this.textBox_Location.ReadOnly = true;
             this.textBox_Location.Size = new System.Drawing.Size(150, 22);
@@ -308,9 +306,9 @@ namespace Project1_Group_4.Forms
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.tableLayoutPanel3);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(533, 153);
+            this.groupBox2.Location = new System.Drawing.Point(523, 153);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(259, 292);
+            this.groupBox2.Size = new System.Drawing.Size(274, 292);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Province Info";
@@ -320,30 +318,28 @@ namespace Project1_Group_4.Forms
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.8664F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.1336F));
+            this.tableLayoutPanel3.Controls.Add(this.label9, 0, 4);
             this.tableLayoutPanel3.Controls.Add(this.button_CompareProvs, 1, 6);
-            this.tableLayoutPanel3.Controls.Add(this.label11, 0, 5);
             this.tableLayoutPanel3.Controls.Add(this.textBox_ProvinceName, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.label7, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBox_ProvPopRank, 1, 5);
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.textBox_CapitalCity, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.label10, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.textBox_ProvNumCities, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.label8, 0, 4);
-            this.tableLayoutPanel3.Controls.Add(this.label9, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.textBox_ProvincePopulation, 1, 4);
-            this.tableLayoutPanel3.Controls.Add(this.textBox_provCityRank, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.label8, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.textBox_ProvincePopulation, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.label11, 0, 5);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 37);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 7;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.05622F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.84615F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.87179F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.87179F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.41026F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.15385F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(247, 249);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.18123F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.83479F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.50588F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.47809F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(262, 249);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // button_CompareProvs
@@ -353,37 +349,22 @@ namespace Project1_Group_4.Forms
             this.button_CompareProvs.FlatAppearance.BorderSize = 4;
             this.button_CompareProvs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_CompareProvs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_CompareProvs.Location = new System.Drawing.Point(99, 210);
+            this.button_CompareProvs.Location = new System.Drawing.Point(104, 208);
             this.button_CompareProvs.Name = "button_CompareProvs";
             this.button_CompareProvs.Size = new System.Drawing.Size(145, 36);
             this.button_CompareProvs.TabIndex = 3;
             this.button_CompareProvs.Text = "Provinces";
             this.button_CompareProvs.UseVisualStyleBackColor = false;
             // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 159);
-            this.label11.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(90, 48);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Population Rank";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // textBox_ProvinceName
             // 
             this.textBox_ProvinceName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_ProvinceName.Location = new System.Drawing.Point(99, 3);
+            this.textBox_ProvinceName.Location = new System.Drawing.Point(104, 3);
             this.textBox_ProvinceName.Name = "textBox_ProvinceName";
             this.textBox_ProvinceName.ReadOnly = true;
-            this.textBox_ProvinceName.Size = new System.Drawing.Size(145, 26);
+            this.textBox_ProvinceName.Size = new System.Drawing.Size(155, 26);
             this.textBox_ProvinceName.TabIndex = 7;
             // 
             // label7
@@ -396,21 +377,10 @@ namespace Project1_Group_4.Forms
             this.label7.Location = new System.Drawing.Point(3, 6);
             this.label7.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 23);
+            this.label7.Size = new System.Drawing.Size(95, 25);
             this.label7.TabIndex = 3;
             this.label7.Text = "Province";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // textBox_ProvPopRank
-            // 
-            this.textBox_ProvPopRank.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_ProvPopRank.Location = new System.Drawing.Point(99, 156);
-            this.textBox_ProvPopRank.Name = "textBox_ProvPopRank";
-            this.textBox_ProvPopRank.ReadOnly = true;
-            this.textBox_ProvPopRank.Size = new System.Drawing.Size(145, 26);
-            this.textBox_ProvPopRank.TabIndex = 16;
             // 
             // label4
             // 
@@ -419,10 +389,10 @@ namespace Project1_Group_4.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 35);
+            this.label4.Location = new System.Drawing.Point(3, 37);
             this.label4.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 22);
+            this.label4.Size = new System.Drawing.Size(95, 24);
             this.label4.TabIndex = 9;
             this.label4.Text = "Capital City";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -432,10 +402,10 @@ namespace Project1_Group_4.Forms
             this.textBox_CapitalCity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_CapitalCity.Location = new System.Drawing.Point(99, 32);
+            this.textBox_CapitalCity.Location = new System.Drawing.Point(104, 34);
             this.textBox_CapitalCity.Name = "textBox_CapitalCity";
             this.textBox_CapitalCity.ReadOnly = true;
-            this.textBox_CapitalCity.Size = new System.Drawing.Size(145, 26);
+            this.textBox_CapitalCity.Size = new System.Drawing.Size(155, 26);
             this.textBox_CapitalCity.TabIndex = 10;
             // 
             // label10
@@ -445,10 +415,10 @@ namespace Project1_Group_4.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 63);
+            this.label10.Location = new System.Drawing.Point(3, 67);
             this.label10.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 25);
+            this.label10.Size = new System.Drawing.Size(95, 27);
             this.label10.TabIndex = 12;
             this.label10.Text = "# of Cities";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -458,10 +428,10 @@ namespace Project1_Group_4.Forms
             this.textBox_ProvNumCities.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_ProvNumCities.Location = new System.Drawing.Point(99, 60);
+            this.textBox_ProvNumCities.Location = new System.Drawing.Point(104, 64);
             this.textBox_ProvNumCities.Name = "textBox_ProvNumCities";
             this.textBox_ProvNumCities.ReadOnly = true;
-            this.textBox_ProvNumCities.Size = new System.Drawing.Size(145, 26);
+            this.textBox_ProvNumCities.Size = new System.Drawing.Size(155, 26);
             this.textBox_ProvNumCities.TabIndex = 14;
             // 
             // label8
@@ -471,50 +441,24 @@ namespace Project1_Group_4.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 125);
+            this.label8.Location = new System.Drawing.Point(3, 100);
             this.label8.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 28);
+            this.label8.Size = new System.Drawing.Size(95, 33);
             this.label8.TabIndex = 4;
             this.label8.Text = "Population";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 94);
-            this.label9.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 25);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "City Rank";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // textBox_ProvincePopulation
             // 
             this.textBox_ProvincePopulation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_ProvincePopulation.Location = new System.Drawing.Point(99, 122);
+            this.textBox_ProvincePopulation.Location = new System.Drawing.Point(104, 97);
             this.textBox_ProvincePopulation.Name = "textBox_ProvincePopulation";
             this.textBox_ProvincePopulation.ReadOnly = true;
-            this.textBox_ProvincePopulation.Size = new System.Drawing.Size(145, 26);
+            this.textBox_ProvincePopulation.Size = new System.Drawing.Size(155, 26);
             this.textBox_ProvincePopulation.TabIndex = 8;
-            // 
-            // textBox_provCityRank
-            // 
-            this.textBox_provCityRank.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_provCityRank.Location = new System.Drawing.Point(99, 91);
-            this.textBox_provCityRank.Name = "textBox_provCityRank";
-            this.textBox_provCityRank.ReadOnly = true;
-            this.textBox_provCityRank.Size = new System.Drawing.Size(145, 26);
-            this.textBox_provCityRank.TabIndex = 15;
             // 
             // label_About
             // 
@@ -536,6 +480,36 @@ namespace Project1_Group_4.Forms
             this.listBox_cities.Size = new System.Drawing.Size(230, 212);
             this.listBox_cities.TabIndex = 9;
             this.listBox_cities.SelectedIndexChanged += new System.EventHandler(this.listBox_cities_SelectedIndexChanged);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(3, 139);
+            this.label9.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(95, 29);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Smallest City";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 174);
+            this.label11.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(95, 31);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Largest City";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // MainWindow
             // 
@@ -602,12 +576,10 @@ namespace Project1_Group_4.Forms
         private System.Windows.Forms.Button button_ViewMap;
         private System.Windows.Forms.Label label_About;
         private System.Windows.Forms.ListBox listBox_cities;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox_ProvPopRank;
         private System.Windows.Forms.TextBox textBox_ProvNumCities;
-        private System.Windows.Forms.TextBox textBox_provCityRank;
         private System.Windows.Forms.Button button_CompareProvs;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
     }
 }
