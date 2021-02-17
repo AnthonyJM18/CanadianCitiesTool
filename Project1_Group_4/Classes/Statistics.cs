@@ -102,7 +102,7 @@ namespace Project1_Group_4.Classes
         public string ShowCityOnMap(CityInfo city)
         {
             // First get lat and lng of the city
-            return $"https://www.bing.com/maps?osid=518e8d2d-ea6e-494f-9f16-6835d4a19ea0&cp={city.Latitude}~{city.Longitude}&lvl=14&style=h&v=2&sV=2&form=S00027";
+            return $"https://www.bing.com/maps?osid=1ef6d360-9e26-4037-a160-f8f8495a46db&cp={city.Latitude}~{city.Longitude}&lvl=11&style=h&v=2&sV=2&form=S00027";
         }
         public decimal CalculateDistanceBetweenCities(CityInfo city1, CityInfo city2)
         {

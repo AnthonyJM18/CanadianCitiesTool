@@ -41,7 +41,8 @@
             this.webBrowser_map.ScriptErrorsSuppressed = true;
             this.webBrowser_map.Size = new System.Drawing.Size(1184, 561);
             this.webBrowser_map.TabIndex = 0;
-            this.webBrowser_map.Url = new System.Uri("http://www.google.com", System.UriKind.Absolute);
+            this.webBrowser_map.Url = new System.Uri("https://www.bing.com/maps?osid=1ef6d360-9e26-4037-a160-f8f8495a46db&cp=43.197741~" +
+        "-79.560526&lvl=11&style=h&v=2&sV=2&form=S00027", System.UriKind.Absolute);
             // 
             // MapWindow
             // 
