@@ -41,6 +41,8 @@ namespace Project1_Group_4.Forms
                     p.Population = stats.DisplayProvincePopulation(prov);
                     p.NumCities = stats.DisplayProvinceCities(prov).Count;
                     p.Capital = stats.GetCapital(prov).CityName;
+                    p.SmallestCity = stats.DisplaySmallestPopulationCity(prov).CityName;
+                    p.LargestCity = stats.DisplayLargestPopulationCity(prov).CityName;
 
                     this.provinces.Add(p);
                     this.comboBox_Province.Items.Add(p);
@@ -114,6 +116,8 @@ namespace Project1_Group_4.Forms
             this.textBox_ProvincePopulation.Text = $"{province.Population}";
             this.textBox_CapitalCity.Text = province.Capital;
             this.textBox_ProvNumCities.Text = $"{province.NumCities}";
+            this.textBox_SmallestCity.Text = $"{province.SmallestCity}";
+            this.textBox_LargestCity.Text = $"{province.LargestCity}";
             if (selectedCity != null)
             {
                 this.button_ViewMap.Enabled = true;
