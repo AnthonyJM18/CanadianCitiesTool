@@ -22,6 +22,7 @@ namespace Project1_Group_4.Forms
         {
             InitializeComponent();
             this.button_ViewMap.Enabled = false;
+            provinces = new List<Province>();
         }
 
         public void LoadProvinces()
