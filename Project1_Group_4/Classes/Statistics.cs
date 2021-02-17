@@ -74,16 +74,16 @@ namespace Project1_Group_4.Classes
             }
         }
 
-        public CityInfo DisplayLargestPopulationCity()
+        public CityInfo DisplayLargestPopulationCity(string province)
         {
             // find the largest population city from the collection
-            return CityCatalogue.Values.Aggregate((l, r) => l.Population > r.Population ? l : r);
+            return CityCatalogue.Values.Where(c => c.Province == province).Aggregate((l, r) => l.Population > r.Population ? l : r);
         }
 
-        public CityInfo DisplaySmallestPopulationCity()
+        public CityInfo DisplaySmallestPopulationCity(string province)
         {
             // Find the lowest population city from the collection
-            return CityCatalogue.Values.Aggregate((l, r) => l.Population < r.Population ? l : r);
+            return CityCatalogue.Values.Where(c => c.Province == province).Aggregate((l, r) => l.Population < r.Population ? l : r);
         }
 
         public CityInfo CompareCitiesPopulation(CityInfo city1, CityInfo city2)
@@ -205,7 +205,7 @@ namespace Project1_Group_4.Classes
             return (List<KeyValuePair<string, int>>)CityCatalogue.Values.GroupBy(c => c.Province, c => c.CityName, (key, value) => new
             {
                 Province = key,
-                Cities = value,
+                Cities = value.Count(),
             });
         }
 
