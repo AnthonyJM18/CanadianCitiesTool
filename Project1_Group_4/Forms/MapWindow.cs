@@ -15,7 +15,11 @@ namespace Project1_Group_4.Forms
         public MapWindow(string url)
         {
             InitializeComponent();
-            this.webBrowser_map.Navigate(url);
+            if (url != null)
+            {
+                this.webBrowser_map.Navigate(url);
+            }
+            
         }
     }
 }

@@ -21,6 +21,7 @@ namespace Project1_Group_4.Forms
         public MainWindow()
         {
             InitializeComponent();
+            this.button_ViewMap.Enabled = false;
         }
 
         public void LoadProvinces()
@@ -105,6 +106,10 @@ namespace Project1_Group_4.Forms
             //this.textBox_ProvincePopulation.Text = $"{province.Population}";
             //this.textBox_CapitalCity.Text = province.Capital;
             //this.textBox_ProvNumCities.Text = $"{province.NumCities}";
+            if (selectedCity != null)
+            {
+                this.button_ViewMap.Enabled = true;
+            }
         }
 
         private void comboBox_Province_SelectedIndexChanged(object sender, EventArgs e)
