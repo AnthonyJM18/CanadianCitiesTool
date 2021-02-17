@@ -24,34 +24,47 @@ namespace Project1_Group_4.Forms
 
         private void button_SortCityAsec_Click(object sender, EventArgs e)
         {
-            List<KeyValuePair<string, int>> provinces = stats.RankProvincesByCities();
+            var provincesByCityAcec = stats.RankProvincesByCities(provinces);
+            this.listBox_Provinces.Items.Clear();
 
-            foreach(var item in provinces)
+            foreach (var item in provincesByCityAcec)
             {
-                this.listBox_Provinces.Items.Clear();
-                this.listBox_Provinces.Items.Add($"{item.Key} - {item.Value}");
+                this.listBox_Provinces.Items.Add($"{item.Name} - {item.NumCities}");
             }
         }
 
         private void button_SortCityDesc_Click(object sender, EventArgs e)
         {
-            List<KeyValuePair<string, int>> provinces = stats.RankProvincesByCities();
-            provinces.Reverse();
-            foreach (var item in provinces)
+            var provincesByCityDesc = stats.RankProvincesByCities(provinces);
+            provincesByCityDesc.Reverse();
+            this.listBox_Provinces.Items.Clear();
+            foreach (var item in provincesByCityDesc)
             {
-                this.listBox_Provinces.Items.Clear();
-                this.listBox_Provinces.Items.Add($"{item.Key} - {item.Value}");
+                this.listBox_Provinces.Items.Add($"{item.Name} - {item.NumCities}");
             }
         }
 
         private void button_SortPopAsec_Click(object sender, EventArgs e)
         {
+            var provincesByPopAcec = stats.RankProvincesByCities(provinces);
+            this.listBox_Provinces.Items.Clear();
 
+            foreach (var item in provincesByPopAcec)
+            {
+                this.listBox_Provinces.Items.Add($"{item.Name} - {item.Population}");
+            }
         }
 
         private void button_SortPopDesc_Click(object sender, EventArgs e)
         {
+            var provincesByPopDesc = stats.RankProvincesByCities(provinces);
+            provincesByPopDesc.Reverse();
+            this.listBox_Provinces.Items.Clear();
 
+            foreach (var item in provincesByPopDesc)
+            {
+                this.listBox_Provinces.Items.Add($"{item.Name} - {item.Population}");
+            }
         }
     }
 }
