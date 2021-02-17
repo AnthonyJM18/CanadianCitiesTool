@@ -110,6 +110,7 @@ namespace Project1_Group_4.Classes
             // second we will attempt to use bing api to determine the distance between two cities
             using (var client = new HttpClient())
             {
+                client.Timeout = TimeSpan.FromSeconds(5);
                 HttpResponseMessage response = client.GetAsync($"https://dev.virtualearth.net/REST/v1/Routes/DistanceMatrix?origins= {city1.Latitude},{city1.Longitude}&destinations={city2.Latitude},{city2.Longitude}&travelMode=driving&key=Askpq8KI6zxoBxJa7CrlZTJslLF1M03qjJVhrIhnIQm4zXTOQQQtad8irrRRBkCI").Result;
 
                 if(response.IsSuccessStatusCode)
