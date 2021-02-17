@@ -131,24 +131,31 @@ namespace Project1_Group_4.Forms
 
         private void comboBox_Province_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!isLoading)
+            try
             {
-                if (this.comboBox_Province.SelectedIndex > 0)
+                if (!isLoading)
                 {
-                    listBox_cities.Items.Clear();
-                    foreach (var city in stats.DisplayProvinceCities(this.comboBox_Province.Text))
+                    if (this.comboBox_Province.SelectedIndex > 0)
                     {
-                        listBox_cities.Items.Add(city);
+                        listBox_cities.Items.Clear();
+                        foreach (var city in stats.DisplayProvinceCities(this.comboBox_Province.Text))
+                        {
+                            listBox_cities.Items.Add(city);
+                        }
+                    }
+                    else
+                    {
+                        listBox_cities.Items.Clear();
+                        foreach (var city in stats.CityCatalogue.Values)
+                        {
+                            listBox_cities.Items.Add(city);
+                        }
                     }
                 }
-                else
-                {
-                    listBox_cities.Items.Clear();
-                    foreach (var city in stats.CityCatalogue.Values)
-                    {
-                        listBox_cities.Items.Add(city);
-                    }
-                }
+            }
+            catch(Exception ex)
+            {
+
             }
             
         }
