@@ -150,7 +150,7 @@ namespace Project1_Group_4.Forms
 
         private void button_CompareProvs_Click(object sender, EventArgs e)
         {
-            var provWin = new ProvinceWindow(stats);
+            var provWin = new ProvinceWindow(stats, provinces);
             provWin.ShowDialog();
         }
     }

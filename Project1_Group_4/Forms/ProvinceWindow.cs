@@ -14,10 +14,12 @@ namespace Project1_Group_4.Forms
     public partial class ProvinceWindow : Form
     {
         Statistics stats;
-        public ProvinceWindow(Statistics stat)
+        List<Province> provinces;
+        public ProvinceWindow(Statistics stat, List<Province> provs)
         {
             InitializeComponent();
             stats = stat;
+            provinces = provs;
         }
 
         private void button_SortCityAsec_Click(object sender, EventArgs e)
