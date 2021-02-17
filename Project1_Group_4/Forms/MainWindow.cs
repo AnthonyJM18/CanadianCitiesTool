@@ -101,10 +101,10 @@ namespace Project1_Group_4.Forms
             this.textBox_CityPopulation.Text = $"{selectedCity.GetPopulation()}";
             this.textBox_Location.Text = selectedCity.GetLocation().ToString();
             Province province = this.provinces.Find(p => p.Name.ToLower() == selectedCity.GetProvince().ToLower());
-            this.textBox_ProvinceName.Text = province.Name;
-            this.textBox_ProvincePopulation.Text = $"{province.Population}";
-            this.textBox_CapitalCity.Text = province.Capital;
-            this.textBox_ProvNumCities.Text = $"{province.NumCities}";
+            //this.textBox_ProvinceName.Text = province.Name;
+            //this.textBox_ProvincePopulation.Text = $"{province.Population}";
+            //this.textBox_CapitalCity.Text = province.Capital;
+            //this.textBox_ProvNumCities.Text = $"{province.NumCities}";
         }
 
         private void comboBox_Province_SelectedIndexChanged(object sender, EventArgs e)

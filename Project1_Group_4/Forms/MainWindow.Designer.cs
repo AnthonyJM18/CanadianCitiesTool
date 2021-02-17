@@ -169,7 +169,7 @@ namespace Project1_Group_4.Forms
             this.button_CompareCities.FlatAppearance.BorderSize = 4;
             this.button_CompareCities.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_CompareCities.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_CompareCities.Location = new System.Drawing.Point(132, 237);
+            this.button_CompareCities.Location = new System.Drawing.Point(132, 245);
             this.button_CompareCities.Name = "button_CompareCities";
             this.button_CompareCities.Size = new System.Drawing.Size(121, 38);
             this.button_CompareCities.TabIndex = 2;
@@ -183,7 +183,7 @@ namespace Project1_Group_4.Forms
             this.button_ViewMap.FlatAppearance.BorderSize = 4;
             this.button_ViewMap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_ViewMap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_ViewMap.Location = new System.Drawing.Point(4, 237);
+            this.button_ViewMap.Location = new System.Drawing.Point(6, 245);
             this.button_ViewMap.Name = "button_ViewMap";
             this.button_ViewMap.Size = new System.Drawing.Size(122, 38);
             this.button_ViewMap.TabIndex = 1;
