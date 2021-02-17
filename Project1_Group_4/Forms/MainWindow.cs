@@ -102,6 +102,7 @@ namespace Project1_Group_4.Forms
             this.textBox_ProvinceName.Text = selectedCity.GetProvince();
             this.textBox_ProvincePopulation.Text = $"{stats.DisplayProvincePopulation(selectedCity.GetProvince())}";
             this.textBox_CapitalCity.Text = stats.GetCapital(selectedCity.GetProvince()).CityName;
+            this.textBox_ProvNumCities.Text = stats.DisplayProvinceCities(selectedCity.GetProvince()).Count().ToString();
 
         }
 
