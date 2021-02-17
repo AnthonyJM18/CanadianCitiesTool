@@ -46,7 +46,7 @@ namespace Project1_Group_4.Forms
 
         private void button_SortPopAsec_Click(object sender, EventArgs e)
         {
-            var provincesByPopAcec = stats.RankProvincesByCities(provinces);
+            var provincesByPopAcec = stats.RankProvincesByPopulation(provinces);
             this.listBox_Provinces.Items.Clear();
 
             foreach (var item in provincesByPopAcec)
@@ -57,7 +57,7 @@ namespace Project1_Group_4.Forms
 
         private void button_SortPopDesc_Click(object sender, EventArgs e)
         {
-            var provincesByPopDesc = stats.RankProvincesByCities(provinces);
+            var provincesByPopDesc = stats.RankProvincesByPopulation(provinces);
             provincesByPopDesc.Reverse();
             this.listBox_Provinces.Items.Clear();
 
