@@ -172,7 +172,6 @@ namespace Project1_Group_4.Classes
             Province manitoba = new Province();
             Province newBrunswick = new Province();
             Province newfoundland = new Province();
-            Province labrador = new Province();
             Province novaScotia = new Province();
             Province ontario = new Province();
             Province princeEdwardIsland = new Province();
@@ -180,11 +179,43 @@ namespace Project1_Group_4.Classes
             Province saskatchewan = new Province();
             Province northwestTerritories = new Province();
             Province nunavut = new Province();
-            Province yukon = new Province(); ;
+            Province yukon = new Province();
 
-            foreach(CityInfo city in FileData.Values)
+            alberta.Name = "Alberta";
+            bristishColumbia.Name = "British Columbia";
+            manitoba.Name = "Manitoba";
+            newBrunswick.Name = "New Brunswick";
+            newfoundland.Name = "Newfoundland and Labrador";
+            novaScotia.Name = "Nova Scotia";
+            ontario.Name = "Ontario";
+            princeEdwardIsland.Name = "Prince Edward Island";
+            quebec.Name = "Quebec";
+            saskatchewan.Name = "Saskatchewan";
+            northwestTerritories.Name = "Northwest Territories";
+            nunavut.Name = "Nunavut";
+            yukon.Name = "Yukon";
+
+            provinces.Add(alberta);
+            provinces.Add(bristishColumbia);
+            provinces.Add(manitoba);
+            provinces.Add(newBrunswick);
+            provinces.Add(newfoundland);
+            provinces.Add(novaScotia);
+            provinces.Add(ontario);
+            provinces.Add(princeEdwardIsland);
+            provinces.Add(quebec);
+            provinces.Add(saskatchewan);
+            provinces.Add(northwestTerritories);
+            provinces.Add(nunavut);
+            provinces.Add(yukon);
+
+
+            foreach (Province prov in provinces)
             {
-                
+                List<CityInfo> citiesOfProvince = FileData.Values.Where(c => c.Province == prov.Name).ToList();
+
+                prov.Population = citiesOfProvince.Sum(c => c.Population);
+                prov.NumCities = citiesOfProvince.Count();
             }
 
             return provinces;
