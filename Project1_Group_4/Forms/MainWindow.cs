@@ -30,20 +30,20 @@ namespace Project1_Group_4.Forms
             this.comboBox_Province.Items.Clear();
             this.comboBox_Province.Items.Add("Filter By Province....");
             this.comboBox_Province.SelectedIndex = 0;
-            List<string> provinces = stats.GetProvinces();
-            Province p = new Province();
+            List<string> provNames = stats.GetProvinces();
 
-            foreach (var prov in provinces)
+            foreach (var prov in provNames)
             {
                 if (prov != null)
                 {
+                    Province p = new Province();
                     p.Name = prov;
                     p.Population = stats.DisplayProvincePopulation(prov);
                     p.NumCities = stats.DisplayProvinceCities(prov).Count;
                     p.Capital = stats.GetCapital(prov).CityName;
 
                     this.provinces.Add(p);
-                    this.comboBox_Province.Items.Add(prov);
+                    this.comboBox_Province.Items.Add(p);
                 }
             }
             isLoading = false;
@@ -109,11 +109,11 @@ namespace Project1_Group_4.Forms
             this.textBox_CityName.Text = selectedCity.CityName;
             this.textBox_CityPopulation.Text = $"{selectedCity.GetPopulation()}";
             this.textBox_Location.Text = selectedCity.GetLocation().ToString();
-            //Province province = this.provinces.Find(p => p.Name.ToLower() == selectedCity.GetProvince().ToLower());
-            //this.textBox_ProvinceName.Text = province.Name;
-            //this.textBox_ProvincePopulation.Text = $"{province.Population}";
-            //this.textBox_CapitalCity.Text = province.Capital;
-            //this.textBox_ProvNumCities.Text = $"{province.NumCities}";
+            Province province = this.provinces.Find(p => p.Name.ToLower() == selectedCity.GetProvince().ToLower());
+            this.textBox_ProvinceName.Text = province.Name;
+            this.textBox_ProvincePopulation.Text = $"{province.Population}";
+            this.textBox_CapitalCity.Text = province.Capital;
+            this.textBox_ProvNumCities.Text = $"{province.NumCities}";
             if (selectedCity != null)
             {
                 this.button_ViewMap.Enabled = true;
