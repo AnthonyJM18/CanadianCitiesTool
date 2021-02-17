@@ -108,31 +108,38 @@ namespace Project1_Group_4.Classes
         {
             // First get latlng of both cities
             // second we will attempt to use bing api to determine the distance between two cities
-            using (var client = new HttpClient())
+            try
             {
-                client.Timeout = TimeSpan.FromSeconds(5);
-                HttpResponseMessage response = client.GetAsync($"https://dev.virtualearth.net/REST/v1/Routes/DistanceMatrix?origins= {city1.Latitude},{city1.Longitude}&destinations={city2.Latitude},{city2.Longitude}&travelMode=driving&key=Askpq8KI6zxoBxJa7CrlZTJslLF1M03qjJVhrIhnIQm4zXTOQQQtad8irrRRBkCI").Result;
-
-                if(response.IsSuccessStatusCode)
+                using (var client = new HttpClient())
                 {
-                    HttpContent responseContent = response.Content;
-                    string responseString = responseContent.ReadAsStringAsync().Result;
+                    client.Timeout = TimeSpan.FromSeconds(5);
+                    HttpResponseMessage response = client.GetAsync($"https://dev.virtualearth.net/REST/v1/Routes/DistanceMatrix?origins= {city1.Latitude},{city1.Longitude}&destinations={city2.Latitude},{city2.Longitude}&travelMode=driving&key=Askpq8KI6zxoBxJa7CrlZTJslLF1M03qjJVhrIhnIQm4zXTOQQQtad8irrRRBkCI").Result;
 
-                    JObject json = JObject.Parse(responseString);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        HttpContent responseContent = response.Content;
+                        string responseString = responseContent.ReadAsStringAsync().Result;
 
-                    decimal distance = (decimal)json.SelectToken("$.resourceSets[0].resources[0].results[0].travelDistance");
+                        JObject json = JObject.Parse(responseString);
 
-                    if (distance == -1)
+                        decimal distance = (decimal)json.SelectToken("$.resourceSets[0].resources[0].results[0].travelDistance");
+
+                        if (distance == -1)
+                        {
+                            return CalculateDistanceManual(city1, city2);
+                        }
+
+                        return distance;
+                    }
+                    else
                     {
                         return CalculateDistanceManual(city1, city2);
                     }
-
-                    return distance;
                 }
-                else
-                {
-                    return CalculateDistanceManual(city1, city2);
-                }
+            }
+            catch(Exception ex)
+            {
+                return CalculateDistanceBetweenCities(city1, city2);
             }
 
         }
