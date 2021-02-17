@@ -23,12 +23,14 @@ namespace Project1_Group_4.Forms
             InitializeComponent();
             this.button_ViewMap.Enabled = false;
             this.button_CompareProvs.Enabled = false;
+            this.button_CompareCities.Enabled = false;
             provinces = new List<Province>();
         }
 
         public void LoadProvinces()
         {
             this.button_CompareProvs.Enabled = true;
+            this.button_CompareCities.Enabled = false;
             this.comboBox_Province.Items.Clear();
             this.provinces.Clear();
             this.comboBox_Province.Items.Add("Filter By Province....");

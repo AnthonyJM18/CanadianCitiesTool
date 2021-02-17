@@ -32,7 +32,7 @@ namespace Project1_Group_4.Forms
 
         private void comboBox_city1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.comboBox_city1.SelectedItem != null)
+            if (this.comboBox_city1.SelectedItem != null && this.comboBox_city2.SelectedItem != null )
             {
                 this.textBox_largerPop.Text = $"{this.statistics.CompareCitiesPopulation((CityInfo)this.comboBox_city1.SelectedItem, (CityInfo)this.comboBox_city2.SelectedItem)}";
                 decimal dec = this.statistics.CalculateDistanceBetweenCities((CityInfo)this.comboBox_city1.SelectedItem, (CityInfo)this.comboBox_city2.SelectedItem);
@@ -42,7 +42,7 @@ namespace Project1_Group_4.Forms
 
         private void comboBox_city2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.comboBox_city1.SelectedItem != null)
+            if (this.comboBox_city1.SelectedItem != null && this.comboBox_city2.SelectedItem != null)
             {
                 this.textBox_largerPop.Text = $"{this.statistics.CompareCitiesPopulation((CityInfo)this.comboBox_city1.SelectedItem, (CityInfo)this.comboBox_city2.SelectedItem)}";
                 decimal dec = this.statistics.CalculateDistanceBetweenCities((CityInfo)this.comboBox_city1.SelectedItem, (CityInfo)this.comboBox_city2.SelectedItem);
