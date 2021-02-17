@@ -51,7 +51,7 @@ namespace Project1_Group_4.Forms
             this.Controls.Add(this.richTextBox1);
             this.MaximizeBox = false;
             this.Name = "AboutWindow";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AboutWindow";
             this.ResumeLayout(false);
 
