@@ -11,7 +11,6 @@ using System.IO;
 using System.Xml;
 using System.Linq;
 using Newtonsoft.Json;
-using Project1_Group_4.Forms;
 
 namespace Project1_Group_4.Classes
 {
@@ -149,6 +148,9 @@ namespace Project1_Group_4.Classes
                 FileData.Add(city.CityID, city);
             }
         }
+        /// <summary>
+        /// Sorts the dictionary by city name
+        /// </summary>
         private void SortDictionary()
         {
             List<KeyValuePair<int, CityInfo>> orderedList = FileData.ToList();
