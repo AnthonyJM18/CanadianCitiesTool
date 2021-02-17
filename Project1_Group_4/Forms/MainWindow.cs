@@ -30,7 +30,7 @@ namespace Project1_Group_4.Forms
         public void LoadProvinces()
         {
             this.button_CompareProvs.Enabled = true;
-            this.button_CompareCities.Enabled = false;
+            this.button_CompareCities.Enabled = true;
             this.comboBox_Province.Items.Clear();
             this.provinces.Clear();
             this.comboBox_Province.Items.Add("Filter By Province....");
