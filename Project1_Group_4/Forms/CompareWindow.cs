@@ -13,19 +13,12 @@ namespace Project1_Group_4.Forms
 {
     public partial class CompareWindow : Form
     {
-        private readonly CityInfo selectedCity;
-
-        public CompareWindow(CityInfo selectedCity)
-        {
-            this.selectedCity = selectedCity;
-        }
 
         private readonly Statistics statistics;
         public CompareWindow(CityInfo selectedCity, List<CityInfo> items, Statistics stats)
         {
             InitializeComponent();
             this.statistics = stats;
-            this.selectedCity = selectedCity;
             foreach (var item in items)
             {
                 this.comboBox_city1.Items.Add(item);
@@ -54,12 +47,6 @@ namespace Project1_Group_4.Forms
                 decimal dec = this.statistics.CalculateDistanceBetweenCities((CityInfo)this.comboBox_city1.SelectedItem, (CityInfo)this.comboBox_city2.SelectedItem);
                 this.textBox_distance.Text = $"{dec} km";
             }
-        }
-
-        public override bool Equals(object obj)
-        {
-            return obj is CompareWindow window &&
-                   EqualityComparer<CityInfo>.Default.Equals(selectedCity, window.selectedCity);
         }
     }
 }
