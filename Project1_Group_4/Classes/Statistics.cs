@@ -179,7 +179,7 @@ namespace Project1_Group_4.Classes
 
         public List<string> GetProvinces()
         {
-            return (List<string>)CityCatalogue.Select(x => x.Value.Province).Distinct().ToList();
+            return CityCatalogue.Select(x => x.Value.Province).Distinct().ToList();
         }
 
         public List<Province> RankProvincesByPopulation(List<Province> provinces)
@@ -200,10 +200,5 @@ namespace Project1_Group_4.Classes
             return CityCatalogue.Values.SingleOrDefault(c => c.Province == province && c.IsCapital == true);
         }
 
-        public string CityPopulationChangeEvent()
-        {
-            // maybe return a string about what change occured and let ui/client/user handle it
-            return null;
-        }
     }
 }
