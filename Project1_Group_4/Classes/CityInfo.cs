@@ -1,6 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿/* Project Group Number:        4
+ * Project Members:             Anthony Merante, Colin Manliclic, Zina Long
+ * Date:                        2021/02/20
+ * 
+ * Purpose:                     This class holds the the information of a city
+ */
 
 namespace Project1_Group_4.Classes
 {
@@ -28,6 +31,7 @@ namespace Project1_Group_4.Classes
             Longitude = lng;
             IsCapital = iscap;
         }
+
         public string GetProvince()
         {
             // return province
@@ -50,6 +54,5 @@ namespace Project1_Group_4.Classes
         {
             return $"{CityName}, {Province}";
         }
-
     }
 }

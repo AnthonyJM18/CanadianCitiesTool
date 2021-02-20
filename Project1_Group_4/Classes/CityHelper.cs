@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/* Project Group Number:        4
+ * Project Members:             Anthony Merante, Colin Manliclic, Zina Long
+ * Date:                        2021/02/20
+ * 
+ * Purpose:                     Helper class to get city information for json serializer
+ */
 
 namespace Project1_Group_4.Classes
 {
