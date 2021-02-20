@@ -68,7 +68,7 @@ namespace Project1_Group_4.Forms
             this.comboBox_city1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox_city1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_city1.ForeColor = System.Drawing.Color.Red;
+            this.comboBox_city1.ForeColor = System.Drawing.Color.Black;
             this.comboBox_city1.FormattingEnabled = true;
             this.comboBox_city1.Location = new System.Drawing.Point(71, 10);
             this.comboBox_city1.Name = "comboBox_city1";
