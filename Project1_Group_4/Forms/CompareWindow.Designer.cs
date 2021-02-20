@@ -74,7 +74,7 @@ namespace Project1_Group_4.Forms
             this.comboBox_city1.Name = "comboBox_city1";
             this.comboBox_city1.Size = new System.Drawing.Size(345, 28);
             this.comboBox_city1.TabIndex = 2;
-            this.comboBox_city1.SelectedIndexChanged += new System.EventHandler(this.comboBox_city1_SelectedIndexChanged);
+            this.comboBox_city1.SelectedIndexChanged += new System.EventHandler(this.ComboBox_city1_SelectedIndexChanged);
             // 
             // comboBox_city2
             // 
@@ -86,7 +86,7 @@ namespace Project1_Group_4.Forms
             this.comboBox_city2.Name = "comboBox_city2";
             this.comboBox_city2.Size = new System.Drawing.Size(345, 28);
             this.comboBox_city2.TabIndex = 3;
-            this.comboBox_city2.SelectedIndexChanged += new System.EventHandler(this.comboBox_city2_SelectedIndexChanged);
+            this.comboBox_city2.SelectedIndexChanged += new System.EventHandler(this.ComboBox_city2_SelectedIndexChanged);
             // 
             // label3
             // 

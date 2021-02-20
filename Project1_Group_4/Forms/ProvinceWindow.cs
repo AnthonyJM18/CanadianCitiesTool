@@ -13,8 +13,8 @@ namespace Project1_Group_4.Forms
 {
     public partial class ProvinceWindow : Form
     {
-        Statistics stats;
-        List<Province> provinces;
+        readonly Statistics stats;
+        readonly List<Province> provinces;
         public ProvinceWindow(Statistics stat, List<Province> provs)
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace Project1_Group_4.Forms
             provinces = provs;
         }
 
-        private void button_SortCityAsec_Click(object sender, EventArgs e)
+        private void Button_SortCityAsec_Click(object sender, EventArgs e)
         {
             var provincesByCityAcec = stats.RankProvincesByCities(provinces);
             this.listBox_Provinces.Items.Clear();
@@ -33,7 +33,7 @@ namespace Project1_Group_4.Forms
             }
         }
 
-        private void button_SortCityDesc_Click(object sender, EventArgs e)
+        private void Button_SortCityDesc_Click(object sender, EventArgs e)
         {
             var provincesByCityDesc = stats.RankProvincesByCities(provinces);
             provincesByCityDesc.Reverse();
@@ -44,7 +44,7 @@ namespace Project1_Group_4.Forms
             }
         }
 
-        private void button_SortPopAsec_Click(object sender, EventArgs e)
+        private void Button_SortPopAsec_Click(object sender, EventArgs e)
         {
             var provincesByPopAcec = stats.RankProvincesByPopulation(provinces);
             this.listBox_Provinces.Items.Clear();
@@ -55,7 +55,7 @@ namespace Project1_Group_4.Forms
             }
         }
 
-        private void button_SortPopDesc_Click(object sender, EventArgs e)
+        private void Button_SortPopDesc_Click(object sender, EventArgs e)
         {
             var provincesByPopDesc = stats.RankProvincesByPopulation(provinces);
             provincesByPopDesc.Reverse();

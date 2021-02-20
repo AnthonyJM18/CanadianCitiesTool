@@ -56,7 +56,7 @@ namespace Project1_Group_4.Forms
             this.button_SortCityAsec.TabIndex = 1;
             this.button_SortCityAsec.Text = "Sort By Cities (Ascending)";
             this.button_SortCityAsec.UseVisualStyleBackColor = true;
-            this.button_SortCityAsec.Click += new System.EventHandler(this.button_SortCityAsec_Click);
+            this.button_SortCityAsec.Click += new System.EventHandler(this.Button_SortCityAsec_Click);
             // 
             // button_SortCityDesc
             // 
@@ -70,7 +70,7 @@ namespace Project1_Group_4.Forms
             this.button_SortCityDesc.TabIndex = 2;
             this.button_SortCityDesc.Text = "Sort By Cities (Descending)";
             this.button_SortCityDesc.UseVisualStyleBackColor = true;
-            this.button_SortCityDesc.Click += new System.EventHandler(this.button_SortCityDesc_Click);
+            this.button_SortCityDesc.Click += new System.EventHandler(this.Button_SortCityDesc_Click);
             // 
             // button_SortPopAsec
             // 
@@ -84,7 +84,7 @@ namespace Project1_Group_4.Forms
             this.button_SortPopAsec.TabIndex = 3;
             this.button_SortPopAsec.Text = "Sort By Population (Ascending)";
             this.button_SortPopAsec.UseVisualStyleBackColor = true;
-            this.button_SortPopAsec.Click += new System.EventHandler(this.button_SortPopAsec_Click);
+            this.button_SortPopAsec.Click += new System.EventHandler(this.Button_SortPopAsec_Click);
             // 
             // button_SortPopDesc
             // 
@@ -98,7 +98,7 @@ namespace Project1_Group_4.Forms
             this.button_SortPopDesc.TabIndex = 4;
             this.button_SortPopDesc.Text = "Sort By Population (Descending)";
             this.button_SortPopDesc.UseVisualStyleBackColor = true;
-            this.button_SortPopDesc.Click += new System.EventHandler(this.button_SortPopDesc_Click);
+            this.button_SortPopDesc.Click += new System.EventHandler(this.Button_SortPopDesc_Click);
             // 
             // ProvinceWindow
             // 

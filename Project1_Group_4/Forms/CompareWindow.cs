@@ -13,8 +13,14 @@ namespace Project1_Group_4.Forms
 {
     public partial class CompareWindow : Form
     {
-        private CityInfo selectedCity;
-        private Statistics statistics;
+        private readonly CityInfo selectedCity;
+
+        public CompareWindow(CityInfo selectedCity)
+        {
+            this.selectedCity = selectedCity;
+        }
+
+        private readonly Statistics statistics;
         public CompareWindow(CityInfo selectedCity, List<CityInfo> items, Statistics stats)
         {
             InitializeComponent();
@@ -28,7 +34,7 @@ namespace Project1_Group_4.Forms
             this.comboBox_city1.SelectedItem = selectedCity;
         }
 
-        private void comboBox_city1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox_city1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.comboBox_city1.SelectedItem != null && this.comboBox_city2.SelectedItem != null )
             {
@@ -39,7 +45,7 @@ namespace Project1_Group_4.Forms
             }
         }
 
-        private void comboBox_city2_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox_city2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.comboBox_city1.SelectedItem != null && this.comboBox_city2.SelectedItem != null)
             {
@@ -48,6 +54,12 @@ namespace Project1_Group_4.Forms
                 decimal dec = this.statistics.CalculateDistanceBetweenCities((CityInfo)this.comboBox_city1.SelectedItem, (CityInfo)this.comboBox_city2.SelectedItem);
                 this.textBox_distance.Text = $"{dec} km";
             }
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is CompareWindow window &&
+                   EqualityComparer<CityInfo>.Default.Equals(selectedCity, window.selectedCity);
         }
     }
 }

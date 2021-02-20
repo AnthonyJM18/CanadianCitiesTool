@@ -16,7 +16,7 @@ namespace Project1_Group_4.Forms
         CityInfo selectedCity;
         Statistics stats;
         bool isLoading = false;
-        List<Province> provinces;
+        readonly List<Province> provinces;
         
         public MainWindow()
         {
@@ -41,13 +41,15 @@ namespace Project1_Group_4.Forms
             {
                 if (prov != null)
                 {
-                    Province p = new Province();
-                    p.Name = prov;
-                    p.Population = stats.DisplayProvincePopulation(prov);
-                    p.NumCities = stats.DisplayProvinceCities(prov).Count;
-                    p.Capital = stats.GetCapital(prov).CityName;
-                    p.SmallestCity = stats.DisplaySmallestPopulationCity(prov).CityName;
-                    p.LargestCity = stats.DisplayLargestPopulationCity(prov).CityName;
+                    Province p = new Province
+                    {
+                        Name = prov,
+                        Population = stats.DisplayProvincePopulation(prov),
+                        NumCities = stats.DisplayProvinceCities(prov).Count,
+                        Capital = stats.GetCapital(prov).CityName,
+                        SmallestCity = stats.DisplaySmallestPopulationCity(prov).CityName,
+                        LargestCity = stats.DisplayLargestPopulationCity(prov).CityName
+                    };
 
                     this.provinces.Add(p);
                     this.comboBox_Province.Items.Add(p.Name);
@@ -56,7 +58,7 @@ namespace Project1_Group_4.Forms
             isLoading = false;
         }
 
-        private void button_CompareCities_Click(object sender, EventArgs e)
+        private void Button_CompareCities_Click(object sender, EventArgs e)
         {
             List<CityInfo> allcities = new List<CityInfo>();
             foreach (var city in stats.CityCatalogue.Values)
@@ -67,19 +69,19 @@ namespace Project1_Group_4.Forms
             compare.ShowDialog();
         }
 
-        private void label_About_Click(object sender, EventArgs e)
+        private void Label_About_Click(object sender, EventArgs e)
         {
             var about = new AboutWindow();
             about.Show();
         }
 
-        private void button_ViewMap_Click(object sender, EventArgs e)
+        private void Button_ViewMap_Click(object sender, EventArgs e)
         {
             var map = new MapWindow(stats.ShowCityOnMap(selectedCity));
             map.Show();
         }
 
-        private void button_LoadCSV_Click(object sender, EventArgs e)
+        private void Button_LoadCSV_Click(object sender, EventArgs e)
         {
             isLoading = true;
             stats = new Statistics("./Data/Canadacities.csv");
@@ -91,7 +93,7 @@ namespace Project1_Group_4.Forms
             LoadProvinces();
         }
 
-        private void button_LoadJSON_Click(object sender, EventArgs e)
+        private void Button_LoadJSON_Click(object sender, EventArgs e)
         {
             isLoading = true;
             stats = new Statistics("./Data/Canadacities-JSON.json");
@@ -103,7 +105,7 @@ namespace Project1_Group_4.Forms
             LoadProvinces();
         }
 
-        private void button_LoadXML_Click(object sender, EventArgs e)
+        private void Button_LoadXML_Click(object sender, EventArgs e)
         {
             isLoading = true;
             stats = new Statistics("./Data/Canadacities-XML.xml");
@@ -115,7 +117,7 @@ namespace Project1_Group_4.Forms
             LoadProvinces();
         }
 
-        private void listBox_cities_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListBox_cities_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedCity = (CityInfo)listBox_cities.SelectedItem;
             this.textBox_CityName.Text = selectedCity.CityName;
@@ -134,7 +136,7 @@ namespace Project1_Group_4.Forms
             }
         }
 
-        private void comboBox_Province_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox_Province_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
@@ -158,14 +160,14 @@ namespace Project1_Group_4.Forms
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception)
             {
 
             }
             
         }
 
-        private void button_CompareProvs_Click(object sender, EventArgs e)
+        private void Button_CompareProvs_Click(object sender, EventArgs e)
         {
             var provWin = new ProvinceWindow(stats, provinces);
             provWin.ShowDialog();

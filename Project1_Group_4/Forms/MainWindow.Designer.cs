@@ -92,7 +92,7 @@ namespace Project1_Group_4.Forms
             this.button_LoadXML.TabIndex = 1;
             this.button_LoadXML.Text = "Load XML";
             this.button_LoadXML.UseVisualStyleBackColor = true;
-            this.button_LoadXML.Click += new System.EventHandler(this.button_LoadXML_Click);
+            this.button_LoadXML.Click += new System.EventHandler(this.Button_LoadXML_Click);
             // 
             // button_LoadJSON
             // 
@@ -106,7 +106,7 @@ namespace Project1_Group_4.Forms
             this.button_LoadJSON.TabIndex = 2;
             this.button_LoadJSON.Text = "Load JSON";
             this.button_LoadJSON.UseVisualStyleBackColor = true;
-            this.button_LoadJSON.Click += new System.EventHandler(this.button_LoadJSON_Click);
+            this.button_LoadJSON.Click += new System.EventHandler(this.Button_LoadJSON_Click);
             // 
             // button_LoadCSV
             // 
@@ -123,7 +123,7 @@ namespace Project1_Group_4.Forms
             this.button_LoadCSV.TabIndex = 3;
             this.button_LoadCSV.Text = "Load CSV";
             this.button_LoadCSV.UseVisualStyleBackColor = false;
-            this.button_LoadCSV.Click += new System.EventHandler(this.button_LoadCSV_Click);
+            this.button_LoadCSV.Click += new System.EventHandler(this.Button_LoadCSV_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -177,7 +177,7 @@ namespace Project1_Group_4.Forms
             this.button_CompareCities.TabIndex = 2;
             this.button_CompareCities.Text = "Compare City";
             this.button_CompareCities.UseVisualStyleBackColor = true;
-            this.button_CompareCities.Click += new System.EventHandler(this.button_CompareCities_Click);
+            this.button_CompareCities.Click += new System.EventHandler(this.Button_CompareCities_Click);
             // 
             // button_ViewMap
             // 
@@ -191,7 +191,7 @@ namespace Project1_Group_4.Forms
             this.button_ViewMap.TabIndex = 1;
             this.button_ViewMap.Text = "View Map";
             this.button_ViewMap.UseVisualStyleBackColor = true;
-            this.button_ViewMap.Click += new System.EventHandler(this.button_ViewMap_Click);
+            this.button_ViewMap.Click += new System.EventHandler(this.Button_ViewMap_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -301,7 +301,7 @@ namespace Project1_Group_4.Forms
             this.comboBox_Province.Name = "comboBox_Province";
             this.comboBox_Province.Size = new System.Drawing.Size(230, 32);
             this.comboBox_Province.TabIndex = 7;
-            this.comboBox_Province.SelectedIndexChanged += new System.EventHandler(this.comboBox_Province_SelectedIndexChanged);
+            this.comboBox_Province.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Province_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -396,7 +396,7 @@ namespace Project1_Group_4.Forms
             this.button_CompareProvs.TabIndex = 3;
             this.button_CompareProvs.Text = "Provinces";
             this.button_CompareProvs.UseVisualStyleBackColor = false;
-            this.button_CompareProvs.Click += new System.EventHandler(this.button_CompareProvs_Click);
+            this.button_CompareProvs.Click += new System.EventHandler(this.Button_CompareProvs_Click);
             // 
             // textBox_ProvinceName
             // 
@@ -527,7 +527,7 @@ namespace Project1_Group_4.Forms
             this.label_About.Size = new System.Drawing.Size(26, 29);
             this.label_About.TabIndex = 8;
             this.label_About.Text = "?";
-            this.label_About.Click += new System.EventHandler(this.label_About_Click);
+            this.label_About.Click += new System.EventHandler(this.Label_About_Click);
             // 
             // listBox_cities
             // 
@@ -536,7 +536,7 @@ namespace Project1_Group_4.Forms
             this.listBox_cities.Name = "listBox_cities";
             this.listBox_cities.Size = new System.Drawing.Size(230, 212);
             this.listBox_cities.TabIndex = 9;
-            this.listBox_cities.SelectedIndexChanged += new System.EventHandler(this.listBox_cities_SelectedIndexChanged);
+            this.listBox_cities.SelectedIndexChanged += new System.EventHandler(this.ListBox_cities_SelectedIndexChanged);
             // 
             // MainWindow
             // 

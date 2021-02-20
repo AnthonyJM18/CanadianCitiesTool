@@ -16,7 +16,6 @@ namespace Project1_Group_4.Classes
         private string FilePath {get; set;}
         private eFileType FileType { get; set; }
         public delegate void PopulationHandler(object sender, EventArgs e);
-        public event PopulationHandler PopulationChanged;
 
         public Statistics(string filePath)
         {
@@ -137,7 +136,7 @@ namespace Project1_Group_4.Classes
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception)
             {
                 return CalculateDistanceBetweenCities(city1, city2);
             }
