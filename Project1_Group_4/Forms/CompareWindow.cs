@@ -14,7 +14,6 @@ namespace Project1_Group_4.Forms
     public partial class CompareWindow : Form
     {
         private CityInfo selectedCity;
-        private ListBox.ObjectCollection items;
         private Statistics statistics;
         public CompareWindow(CityInfo selectedCity, List<CityInfo> items, Statistics stats)
         {
