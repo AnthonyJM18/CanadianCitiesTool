@@ -1,4 +1,10 @@
-﻿using Project1_Group_4.Enums;
+﻿/* Project Group Number:        4
+ * Project Members:             Anthony Merante, Colin Manliclic, Zina Long
+ * Date:                        2021/02/20
+ * Purpose:                     Statistics class for manipulating Dictionary<int, CityInfo> CityCatalogue. It also enables the user to retreieve all information
+ *                              about the stored cities in the CityCatalogue. All input parameters are selected by the end-user of the application.
+ */
+using Project1_Group_4.Enums;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,11 +16,16 @@ namespace Project1_Group_4.Classes
 {
     public class Statistics
     {
+        // Staistics Members
         public Dictionary<int, CityInfo> CityCatalogue;
         private string FilePath {get; set;}
         private eFileType FileType { get; set; }
-        public delegate void PopulationHandler(object sender, EventArgs e);
 
+        /// <summary>
+        ///  The user must specify the file name, “Canadacities”, 
+        ///  and then determine the file type or extension to be JSON, XML, or CSV.
+        /// </summary>
+        /// <param name="filePath"></param>
         public Statistics(string filePath)
         {
             // If filepath exists 
@@ -48,7 +59,13 @@ namespace Project1_Group_4.Classes
             }
         }
 
-        // City Methods
+        /// <summary>
+        /// This method will take a CityName parameter and return all the city stored information in the CityCatalogue 
+        /// dictionary variable.The application should show all cities sharing the
+        /// same name or be creative and ask the user which city should be displayed
+        /// </summary>
+        /// <param name="city"></param>
+        /// <returns>List of Cities</returns>
         public List<CityInfo> DisplayCityInformation(string city)
         {
             // convert city name to lowercase
@@ -71,18 +88,36 @@ namespace Project1_Group_4.Classes
             }
         }
 
+        /// <summary>
+        /// It will return the largest population city in a province
+        /// </summary>
+        /// <param name="province"></param>
+        /// <returns>CityInfo of largest pop city</returns>
         public CityInfo DisplayLargestPopulationCity(string province)
         {
             // find the largest population city from the collection
             return CityCatalogue.Values.Where(c => c.Province == province).Aggregate((l, r) => l.Population > r.Population ? l : r);
         }
 
+        /// <summary>
+        /// It will return the smallest population city in a province
+        /// </summary>
+        /// <param name="province"></param>
+        /// <returns>CityInfo of smallest pop city</returns>
         public CityInfo DisplaySmallestPopulationCity(string province)
         {
             // Find the lowest population city from the collection
             return CityCatalogue.Values.Where(c => c.Province == province).Aggregate((l, r) => l.Population < r.Population ? l : r);
         }
 
+        /// <summary>
+        /// This method will take two parameters 
+        /// each represents one city.It will return the city with a larger population
+        /// and the population number of each city
+        /// </summary>
+        /// <param name="city1"></param>
+        /// <param name="city2"></param>
+        /// <returns>Cityinfo with the largest population compared</returns>
         public CityInfo CompareCitiesPopulation(CityInfo city1, CityInfo city2)
         {
             // Find which city has a larger population
@@ -96,15 +131,29 @@ namespace Project1_Group_4.Classes
             }
         }
 
+        /// <summary>
+        /// Use the name of the city and province to mark a city on the map. Takes CityInfo's LatLng object.
+        /// </summary>
+        /// <param name="city"></param>
+        /// <returns>URL of the map location on Bing</returns>
         public string ShowCityOnMap(CityInfo city)
         {
             // First get lat and lng of the city
             return $"https://www.bing.com/maps?osid=1ef6d360-9e26-4037-a160-f8f8495a46db&cp={city.Latitude}~{city.Longitude}&lvl=11&style=h&v=2&sV=2&form=S00027";
         }
+
+        /// <summary>
+        /// This method calculates the distance between any two cities using the latitude and longitude of 
+        /// the input cities stored in the CityCatalogue dictionary variable.
+        /// </summary>
+        /// <param name="city1"></param>
+        /// <param name="city2"></param>
+        /// <returns>distance of the two places in decimal</returns>
         public decimal CalculateDistanceBetweenCities(CityInfo city1, CityInfo city2)
         {
             // First get latlng of both cities
             // second we will attempt to use bing api to determine the distance between two cities
+            // if API does not work or returns -1, manually find distance
             try
             {
                 using (var client = new HttpClient())
@@ -141,6 +190,12 @@ namespace Project1_Group_4.Classes
 
         }
 
+        /// <summary>
+        /// Manually calculate distance using formulas
+        /// </summary>
+        /// <param name="city1"></param>
+        /// <param name="city2"></param>
+        /// <returns>Distance between two locations</returns>
         private decimal CalculateDistanceManual(CityInfo city1, CityInfo city2)
         {
             double rlat1 = Math.PI * (double)city1.Latitude / 180;
@@ -157,7 +212,12 @@ namespace Project1_Group_4.Classes
             return (decimal)Math.Round(dist * 1.609344, 3);
         }
 
-        // Province Methods
+        /// <summary>
+        /// This method will take a province name parameter and return the sum of all populations of its cities saved in
+        /// the CityCatalogue dictionary variable.
+        /// </summary>
+        /// <param name="province"></param>
+        /// <returns>population of province as int</returns>
         public int DisplayProvincePopulation(string province)
         {
             // search the collection for all cities with the specified province
@@ -168,6 +228,11 @@ namespace Project1_Group_4.Classes
             return citiesOfProvince.Sum(c => c.Population);
         }
 
+        /// <summary>
+        /// This method will take the province name  parameter and return a list of all cities of that province from the CityCatalogue dictionary variable
+        /// </summary>
+        /// <param name="province"></param>
+        /// <returns>List of CityInfo of cities filtered by the selected province</returns>
         public List<CityInfo> DisplayProvinceCities(string province)
         {
             // search the collection for all cities with the specified province
@@ -175,23 +240,48 @@ namespace Project1_Group_4.Classes
 
         }
 
+        /// <summary>
+        /// This method will get all the provinces in CityCatalogue
+        /// </summary>
+        /// <param name="province"></param>
+        /// <returns>List of String of Province Names</returns>
         public List<string> GetProvinces()
         {
             return CityCatalogue.Select(x => x.Value.Province).Distinct().ToList();
         }
 
+        /// <summary>
+        /// It will sort all provinces by population. 
+        /// The order has to be ascending.The display should show the
+        /// province and population number
+        /// </summary>
+        /// <param name="provinces"></param>
+        /// <returns>List of Province sorted by pop</returns>
         public List<Province> RankProvincesByPopulation(List<Province> provinces)
         {
             // Get the population for every province
              return provinces.OrderBy(p => p.Population).ToList();
 
         }
+
+        /// <summary>
+        /// it will sort all provinces by the number of
+        /// cities in each.The order has to be ascending.The display should
+        /// show the province and number of included cities
+        /// </summary>
+        /// <param name="provinces"></param>
+        /// <returns>List of Province sorted by numcities</returns>
         public List<Province> RankProvincesByCities(List<Province> provinces)
         {
             // get the number of cities for each province
             return provinces.OrderBy(p => p.NumCities).ToList();
         }
 
+        /// <summary>
+        /// It shows the capital of a province with its latitude and longitude
+        /// </summary>
+        /// <param name="province"></param>
+        /// <returns>CityInfo of the capital of the selected province</returns>
         public CityInfo GetCapital(string province)
         {
             // Get the capital of the province

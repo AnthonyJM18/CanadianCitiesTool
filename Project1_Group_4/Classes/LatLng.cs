@@ -1,6 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿/* Project Group Number:        4
+ * Project Members:             Anthony Merante, Colin Manliclic, Zina Long
+ * Date:                        2021/02/20
+ * 
+ * Purpose:                     Helper class for a cities location of latitude and longitude
+ */
+
+using System;
 
 namespace Project1_Group_4.Classes
 {
@@ -15,6 +20,10 @@ namespace Project1_Group_4.Classes
             Longitude = lng;
         }
 
+        /// <summary>
+        /// overrides ToSting method to return latitude and longitude
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"{Math.Round(Latitude,4)}, {Math.Round(Longitude, 4)}";
