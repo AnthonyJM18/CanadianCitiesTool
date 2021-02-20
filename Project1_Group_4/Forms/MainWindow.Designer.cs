@@ -48,6 +48,9 @@ namespace Project1_Group_4.Forms
             this.comboBox_Province = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox_LargestCity = new System.Windows.Forms.TextBox();
+            this.textBox_SmallestCity = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.button_CompareProvs = new System.Windows.Forms.Button();
             this.textBox_ProvinceName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -57,12 +60,9 @@ namespace Project1_Group_4.Forms
             this.textBox_ProvNumCities = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox_ProvincePopulation = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.label_About = new System.Windows.Forms.Label();
             this.listBox_cities = new System.Windows.Forms.ListBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox_SmallestCity = new System.Windows.Forms.TextBox();
-            this.textBox_LargestCity = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -346,6 +346,43 @@ namespace Project1_Group_4.Forms
             this.tableLayoutPanel3.Size = new System.Drawing.Size(262, 249);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
+            // textBox_LargestCity
+            // 
+            this.textBox_LargestCity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_LargestCity.Location = new System.Drawing.Point(104, 171);
+            this.textBox_LargestCity.Name = "textBox_LargestCity";
+            this.textBox_LargestCity.ReadOnly = true;
+            this.textBox_LargestCity.Size = new System.Drawing.Size(155, 26);
+            this.textBox_LargestCity.TabIndex = 18;
+            // 
+            // textBox_SmallestCity
+            // 
+            this.textBox_SmallestCity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_SmallestCity.Location = new System.Drawing.Point(104, 136);
+            this.textBox_SmallestCity.Name = "textBox_SmallestCity";
+            this.textBox_SmallestCity.ReadOnly = true;
+            this.textBox_SmallestCity.Size = new System.Drawing.Size(155, 26);
+            this.textBox_SmallestCity.TabIndex = 17;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(3, 139);
+            this.label9.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(95, 29);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Smallest City";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // button_CompareProvs
             // 
             this.button_CompareProvs.BackColor = System.Drawing.Color.White;
@@ -465,6 +502,21 @@ namespace Project1_Group_4.Forms
             this.textBox_ProvincePopulation.Size = new System.Drawing.Size(155, 26);
             this.textBox_ProvincePopulation.TabIndex = 8;
             // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 174);
+            this.label11.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(95, 31);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Largest City";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // label_About
             // 
             this.label_About.AutoSize = true;
@@ -485,58 +537,6 @@ namespace Project1_Group_4.Forms
             this.listBox_cities.Size = new System.Drawing.Size(230, 212);
             this.listBox_cities.TabIndex = 9;
             this.listBox_cities.SelectedIndexChanged += new System.EventHandler(this.listBox_cities_SelectedIndexChanged);
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 139);
-            this.label9.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(95, 29);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Smallest City";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 174);
-            this.label11.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(95, 31);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "Largest City";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // textBox_SmallestCity
-            // 
-            this.textBox_SmallestCity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_SmallestCity.Location = new System.Drawing.Point(104, 136);
-            this.textBox_SmallestCity.Name = "textBox_SmallestCity";
-            this.textBox_SmallestCity.ReadOnly = true;
-            this.textBox_SmallestCity.Size = new System.Drawing.Size(155, 26);
-            this.textBox_SmallestCity.TabIndex = 17;
-            // 
-            // textBox_LargestCity
-            // 
-            this.textBox_LargestCity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_LargestCity.Location = new System.Drawing.Point(104, 171);
-            this.textBox_LargestCity.Name = "textBox_LargestCity";
-            this.textBox_LargestCity.ReadOnly = true;
-            this.textBox_LargestCity.Size = new System.Drawing.Size(155, 26);
-            this.textBox_LargestCity.TabIndex = 18;
             // 
             // MainWindow
             // 

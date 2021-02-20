@@ -16,12 +16,11 @@ namespace Project1_Group_4.Forms
         private CityInfo selectedCity;
         private ListBox.ObjectCollection items;
         private Statistics statistics;
-        public CompareWindow(CityInfo selectedCity, ListBox.ObjectCollection items, Statistics stats)
+        public CompareWindow(CityInfo selectedCity, List<CityInfo> items, Statistics stats)
         {
             InitializeComponent();
             this.statistics = stats;
             this.selectedCity = selectedCity;
-            this.items = items;
             foreach (var item in items)
             {
                 this.comboBox_city1.Items.Add(item);

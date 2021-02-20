@@ -58,7 +58,12 @@ namespace Project1_Group_4.Forms
 
         private void button_CompareCities_Click(object sender, EventArgs e)
         {
-            var compare = new CompareWindow(selectedCity, listBox_cities.Items, stats);
+            List<CityInfo> allcities = new List<CityInfo>();
+            foreach (var city in stats.CityCatalogue.Values)
+            {
+                allcities.Add(city);
+            }
+            var compare = new CompareWindow(selectedCity, allcities, stats);
             compare.ShowDialog();
         }
 
