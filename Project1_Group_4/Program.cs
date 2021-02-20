@@ -1,8 +1,12 @@
-﻿using Project1_Group_4.Forms;
+﻿/* Project Group Number:        4
+ * Project Members:             Anthony Merante, Colin Manliclic, Zina Long
+ * Date:                        2021/02/14
+ * 
+ * Purpose:                     Entry point for the windows forms
+ */
+
+using Project1_Group_4.Forms;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project1_Group_4
